@@ -642,7 +642,7 @@ module.exports = {
         var requestOptions = {
             method: 'POST',
             headers:  {
-                'Authorization': 'Basic cnpwX3Rlc3RfcEFadTZYWU1RdTJjN0g6d0VKU3lUd0FXcW9SUjhrSFBBN3RDYzky',
+                'Authorization': 'Basic test1e4abc',
                 'Content-Type': 'application/json'
               },
             body: { "amount": payment_amount },
