@@ -97,29 +97,13 @@ module.exports = {
             console.log("otp sender email : " + emailorph)
             console.log("otp sender")
             if(logintype == 'email') {
-                /*
-                var transporterSendinBlue = nodemailer.createTransport({
-                    host: "smtp-relay.sendinblue.com",
-                    auth: {
-                        user: 'pinak.nath@techinfy.in',
-                        pass: '81zkEC42SIcWsPaG'
-                    },
-                    port: 587
-                });
-
-                transporterSendinBlue.sendMail({
-                    from: 'noreply@doctorsetu.com',
-                    to: emailorph,
-                    subject: ' OTP Doctor setu ',
-                    text: 'Hi,\n' + 'Greetings!\n\n' + 'You are just a step away from accessing your Doctor Setu account\n' + 'We are sharing an OTP to access your account. The code is valid for 30 minutes and usable only once.\n\n' + 'Your OTP:'+ unqueOTP +  '\nExpires in: 30 minutes\n\nBest Regards,\nTeam Doctor Setu'
-                });
-                */
+                
               
                 var transporter = nodemailer.createTransport(smtpTransport({
                   service: 'Gmail',
                   auth: {
-                      user: 'doctorsetuotp@gmail.com',
-                      pass: 'D0ctor@$etu'
+                      user: 'test@gmail.com',
+                      pass: 'test'
                 },
                 port:25
                 }));
@@ -131,21 +115,13 @@ module.exports = {
                     text: 'Hi,\n' + 'Greetings!\n\n' + 'You are just a step away from accessing your Doctor Setu account\n' + 'We are sharing an OTP to access your account. The code is valid for 30 minutes and usable only once.\n\n' + 'Your OTP:'+ unqueOTP +  '\nExpires in: 30 minutes\n\nBest Regards,\nTeam Doctor Setu'
                   });
                  console.log("send email "+ emailorph + unqueOTP)
-                /*
-                transporter.sendMail({
-                    from: 'preksh@gmail.com',
-                      to: emailorph,
-                      subject: ' OTP Doctor setu ',
-                      text:  unqueOTP + ' :  OTP!'
-                    });
-                    
-                 */
+              
                 
             } else {
                   console.log("number")
                   const nexmo = new Nexmo({
-                      apiKey: '5d1ab8aa',
-                      apiSecret: 'JTYck98onKc9hyNy',
+                      apiKey: 'testKey',
+                      apiSecret: 'testApiKey',
                   });
                   var to = "+91"+emailorph;
                   var from = 'Doctorsetu';
@@ -154,7 +130,7 @@ module.exports = {
                  // nexmo.message.sendSms(from, to, text);
 
                   const sendOtp = new SendOtp('250830A8Gl1h5Gf7335c0a3e0a');
-                  sendOtp.send(to, "PREKSH", unqueOTP,function (error, data) {
+                  sendOtp.send(to, "PNKDEL", unqueOTP,function (error, data) {
                     console.log("data");
                     console.log(error);
                     console.log(data)
