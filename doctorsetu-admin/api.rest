@@ -1,0 +1,247 @@
+POST http://192.168.43.132:8000/users/register
+Content-Type: application/json
+
+{
+    "email":"srivathsakv@gmail.com"
+}
+###
+
+post http://api.doctorsetu.com:8000/doctor/profile/
+
+Content-Type: application/json
+{
+   "specilalist":"Dentist"
+}
+
+###
+POST http://192.168.43.132:8000/doctor/schedule
+Content-Type: application/json
+
+{
+   "doctor_id":"6566c008-8f15-4848-bbc5-9877d649b25d",
+   "day": "monday"
+}
+###
+POST http://192.168.43.132:8000/doctor/schedule/bookDoctorslot
+Content-Type: application/json
+
+{
+   "doctor_id":"6566c008-8f15-4848-bbc5-9877d649b25d",
+   "slot":"17:00-17:30",
+   "day":"monday",
+   "date":"11-02-2020"
+}
+###
+POST http://192.168.43.132:8000/doctor/schedule/todaysDoctorslots
+Content-Type: application/json
+
+{
+   "doctor_id":"sd32-43fsdh4-324-fdd",
+   "day":"sunday"
+}
+
+###
+GET http://localhost:8000/doctor/profile/test
+
+Content-Type: application/json
+{
+   "specilalist":"Dentist"
+}
+
+###
+POST http://192.186.1.4:8000/doctor/profile/test
+Content-Type: application/json
+
+{
+    "name":"Pinak",
+    "phoneno":"8974094939",
+    "email":"pnkdel@gmail.com",
+    "password":"123456"
+}
+###
+POST http://192.168.0.161:8000/doctor/profile/
+Content-Type: application/json
+
+{
+   "specilalist":"Dentist"
+}
+
+###
+POST http://192.168.43.132:8000/doctor/profile/update/
+Content-Type: application/json
+
+{
+   "id":"6566c008-8f15-4848-bbc5-9877d649b25d",
+   "updateData":{"experience":"12345" }
+}
+
+###
+POST http://192.168.43.132:8000/doctor/profile/updatePatient/
+Content-Type: application/json
+
+{
+   "id":"6566c008-8f15-4848-bbc5-9877d649b25d",
+   "updateData":{ }
+}
+
+###
+GET http://192.168.1.12:8000/symptoms
+
+
+###
+GET http://192.168.0.134:8000/hospital
+
+###
+GET  http://api.doctorsetu.com:8000/specialization
+
+
+###
+GET http://api.doctorsetu.com:8000/symptoms
+
+
+###
+POST http://192.168.1.4:8000/users/login
+Content-Type: application/json
+
+{
+   "loginID": "test@gmail.com",
+   "password": "test123",
+   "loginType": "doctor"
+}
+
+###
+POST http://192.168.0.134:8000/doctor/profile/
+Content-Type: application/json
+
+{
+   "id":"3"
+}
+
+### 
+POST http://192.168.43.132:8000/patient/appointment/
+Content-Type: application/json
+
+{
+ "appointment_id" : "",
+"appointment_uid" :"123",
+"appointment_date":"",
+"appointment_time":"",
+"appointment_type":"",
+"appointment_subtype":"",
+"eprescription":"",
+"appointment_status":"pending",
+"appointment_docid":"6566c008-8f15-4848-bbc5-9877d649b25d",
+   "slot":"17:00-17:30",
+   "day":"monday",
+   "date":"11-02-2020"
+
+   }
+
+
+### 
+POST http://192.168.43.132:8000/patient/appointment/list
+Content-Type: application/json
+
+{
+    "patient_id":"123",
+    "appointment_status":"pending"
+
+   }
+
+   
+### 
+POST http://192.168.43.132:8000/doctor/appointment
+Content-Type: application/json
+
+{
+    "doctor_id":"1",
+    "appointment_status":"pending"
+
+   }
+
+      
+### 
+POST http://192.168.43.132:8000/doctor/appointment/patientId
+Content-Type: application/json
+
+{
+    "doctor_id":"666",
+    "patient_id":"123",
+    "appointment_status":"pending"
+
+   }
+
+
+### 
+POST http://192.168.0.198:8000/users/addDoctor
+Content-Type: application/json
+
+   {
+	"name" : {
+		"first" : "John",
+		"middle" : "r",
+		"last" : "smith"
+	},
+	"about" : "Fortis Healthcare Limited is a chain of hospitals, headquartered in India. Fortis started its health care operations from Mohali where first Fortis hospital was started. Later on, the hospital chain purchased the healthcare branch of Escorts group and increased its strength in various parts of the country",
+	"gender" : "female",
+	"experience" : "8 years",
+	"profilepic" : "https://www.woodlandshospital.in/images/doctor-img/aneek-roy-chowdhury.jpg",
+	"languages" : [
+		"English",
+		"Kannada",
+		"Tamil",
+		"Telugu"
+	],
+	"specializations" : [
+		{
+			"name" : "Pediatric",
+			"degree" : "MD"
+		}
+	],
+	"contact" : {
+		"telephone" : [
+			"98722223218",
+			"8787878787"
+		],
+		"email" : [
+			"John.s@gmail.com",
+			"RjohnSmith.gmail.com"
+		],
+		"address" : {
+			"line1" : "#105, Fortune",
+			"line2" : "Sai Baba Temple Road",
+			"line3" : "Munnekolala",
+			"city" : "mysore",
+			"state" : "Karnataka",
+			"country" : "India",
+			"zipcode" : "560035"
+		}
+	}
+}
+
+
+
+
+### 
+GET http://192.168.43.132:8000/patient/appointment/geteprescription?epres=<name>
+Content-Type: application/json
+
+{
+    
+
+}
+
+### 
+
+In body: eprescription key  of type file and attached file and save.
+
+POST http://192.168.43.132:8000/patient/appointment/picture/saveprescription
+Content-Type: application/json
+header: newfile
+{
+    
+}
+
+###
+GET http://192.168.1.4:8000/symptoms
+

@@ -1,0 +1,114 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "version": "0.0.1",
+    "title": "Webservices",
+    "description": "Cureassist API",
+    "termsOfService": "https://www.cureassist.co/terms",
+    "contact": {
+      "name": "CureAssist Team",
+      "email": "hello@cureassist.co",
+      "url": "https://www.cureassist.co/"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000/",
+      "description": "Local server"
+    },
+    {
+      "url": "http://testapi.cureassist.co",
+      "description": "Testing server"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "emailID": {
+        "type": "string",
+        "description": "User's email id",
+        "example": "alex@abc.com"
+      },
+      "OTP": {
+        "type": "string",
+        "description": "One Time Password for authenticating the user",
+        "example": "879658"
+      },
+      "ClientError": {
+        "type": "string",
+        "description": "Any error caused due to input from the client",
+        "example": "Account Exist"
+      },
+      "ServerError": {
+        "type": "string",
+        "description": "Any error caused due to the process in the server",
+        "example": "Connection error in database"
+      }
+    }
+  },
+  "paths": {
+    "/users/register": {
+      "post": {
+        "tags": ["Registration"],
+        "description": "Register User",
+        "operationId": "registerUser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "required": true,
+                    "$ref": "#/components/schemas/emailID"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OTP for setting the password sent successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OTP"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Account Exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClientError"
+                },
+                "example": {
+                  "message": "Account already Exist."
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServerError"
+                },
+                "example": {
+                  "message": "Could not generate the OTP"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

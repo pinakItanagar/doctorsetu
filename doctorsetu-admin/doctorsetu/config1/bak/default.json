@@ -1,0 +1,49 @@
+
+{
+   "APP": {
+     "host": "0.0.0.0",
+     "port": "8000",
+     "otptime": 20000,
+     "sessiontime": 3600,
+     "secretkey": "cureassist"
+   },
+   "DB": {
+     "session": {
+       "host": "127.0.0.1",
+       "port": "6379",
+       "user": "",
+       "password": "",
+       "sessiondb": 0,
+       "otpdb": 1
+     },
+     "datastore": {
+       "url": "mongodb://doctorseturwuser:xjgKsVMnLg4deXCDwrmLAbr4Qn7LJzBdPw@localhost:27017/doctorsetu",
+       "name": "doctorsetu"
+    }
+  }
+ }
+
+
+{
+  "APP": {
+    "host": "localhost",
+    "port": "8000",
+    "otptime": 20000,
+    "sessiontime": 3600,
+    "secretkey": ""
+  },
+  "DB": {
+    "session": {
+      "host": "127.0.0.1",
+      "port": "6379",
+      "user": "",
+      "password": "",
+      "sessiondb": 0,
+      "otpdb": 1
+    },
+    "datastore": {
+      "url": "mongodb://localhost:27017/",
+      "name": "cureassist"
+    }
+  }
+}

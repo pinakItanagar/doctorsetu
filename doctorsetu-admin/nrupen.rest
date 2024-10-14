@@ -1,0 +1,157 @@
+###
+POST http://192.168.29.192:8000/doctor/appointment
+Content-Type: application/json
+
+{
+    "doctor_id":"4",
+    "appointment_status":"pending"
+
+   }
+####
+GET http://192.168.29.192:8000/symptoms
+###
+POST http://192.168.29.192:8000/patient/appointment/
+Content-Type: application/json
+
+{ 
+    "appointment_id" : "",
+    "appointment_uid" :"1234",
+    "appointment_docid":"388181749782",
+    "appointment_date":"",
+    "appointment_time":"",
+    "appointment_type":"",
+    "appointment_subtype":"",
+    "eprescription":"",
+    "appointment_status":"completed"
+}
+
+###
+POST http://api.doctorsetu.com:8000/patient/appointment/
+Content-Type: application/json
+
+{ 
+    "appointment_id" : "",
+    "appointment_uid" :"1234",
+    "appointment_docid":"4",
+    "appointment_date":"2020-06-19",
+    "appointment_time":"8:00am",
+    "appointment_type":"",
+    "appointment_subtype":"",
+    "eprescription":"",
+    "appointment_status":"completed"
+}
+###
+POST http://api.doctorsetu.com:8000/doctor/appointment
+Content-Type: application/json
+
+{
+    "doctor_id":"4",
+    "appointment_status":"pending"
+
+   }
+
+   
+###
+GET http://api.doctorsetu.com:8000/symptoms
+
+###
+POST http://192.168.29.192:8000/doctor/appointment
+Content-Type: application/json
+
+{
+    "doctor_id":"4",
+    "appointment_status":"pending"
+
+   }
+
+###
+POST http://api.doctorsetu.com:8000/users/register
+Content-Type: application/json
+
+{
+    "email":"nrupendra26@gmail.com"
+}
+
+###
+POST http://api.doctorsetu.com:8000/users/login
+Content-Type: application/json
+
+{
+    "loginID":"doctor@doctorsetu.com",
+    "password":"Nnp123"
+}
+
+### 
+POST http://192.168.29.192:8000/patient/appointment/list
+Content-Type: application/json
+
+{
+    "patient_id":"388181749782",
+    "appointment_status":"pending"
+}
+
+###
+GET http://api.doctorsetu.com:8000/patient/appointment/eprescription
+Content-Type: application/json
+
+{
+    
+
+   }
+
+###
+POST http://192.168.29.192:8000/patient/appointment/picture/saveprescription
+Content-Type: application/json
+
+header: newfile
+{
+    
+}
+###
+POST http://192.168.29.192:8000/doctor/schedule
+Content-Type: application/json
+
+{
+   "doctor_id":"4",
+   "day": "thursday",
+   "date":"09-07-2020"
+}
+###
+POST http://192.168.29.192:8000/doctor/schedule/bookDoctorslot
+Content-Type: application/json
+
+{
+   "doctor_id":"4",
+   "slot":"09:00-9:30",
+   "day":"thursday",
+   "date":"02/07/2020"
+}
+
+###
+POST http://192.168.29.192:8000/patient/appointment/
+Content-Type: application/json
+
+{
+ "appointment_id" : "",
+"appointment_uid" :"123",
+"appointment_date":"",
+"appointment_time":"",
+"appointment_type":"",
+"appointment_subtype":"",
+"eprescription":"",
+"appointment_status":"pending",
+"appointment_docid":"4",
+"slot":"14:00-14:30",
+"day":"friday",
+"date":"03-07-2020"
+}
+
+###
+POST http://api.doctorsetu.com:8000/users/login
+Content-Type: application/json
+
+{
+    "loginID":"test002@gmail.com",
+    "password":"Aa1234",
+    "loginType": "patient"
+}

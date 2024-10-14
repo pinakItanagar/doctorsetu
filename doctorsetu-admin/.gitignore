@@ -1,0 +1,6 @@
+/node_modules
+/.vs
+/openssl
+/public
+/config/
+config/

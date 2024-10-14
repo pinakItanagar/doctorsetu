@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"cureassist.user"}],"uuid":"ee737302d1434393bf6761af1ce91410"}
