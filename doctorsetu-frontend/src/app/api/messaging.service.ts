@@ -101,7 +101,7 @@ savetoken(id: any){
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'key=AAAAI8m9BhA:APA91bHV4hf8TO9rbcudcBkTOC2A_sjQRFeTO799TrHtHFP-_jE5h6K23HbnVYDSODDanYNfDcVoMHDbbO8rM_bms28roz9m2ldjZFL1Xc7tYM6lf8zcynrxQw7WKazRzWjRLn14J5I1'
+                'Authorization': 'key=testkey'
             },
             body: JSON.stringify(
                 {
@@ -129,7 +129,7 @@ rejectcall( patient_name, token){
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'key=AAAAI8m9BhA:APA91bHV4hf8TO9rbcudcBkTOC2A_sjQRFeTO799TrHtHFP-_jE5h6K23HbnVYDSODDanYNfDcVoMHDbbO8rM_bms28roz9m2ldjZFL1Xc7tYM6lf8zcynrxQw7WKazRzWjRLn14J5I1'
+        'Authorization': 'key=testkey'
       },
       body: JSON.stringify(
         {
