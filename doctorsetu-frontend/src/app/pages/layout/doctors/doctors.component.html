@@ -1,0 +1,44 @@
+<div size="" accent="info" class="bg-none mx-1">
+  
+    <div class="d-flex flex-direction-row justify-content-between w-100 align-items-center head">
+      <div class="symptom-head">
+        <span>Doctor Profile </span>
+      </div>
+      <!-- <button type="button" class="btn btn-primary button" mat-raised-button>
+        + Edit
+      </button> -->
+      
+    </div>
+    <div class="table-top box-view m-0 p-0" style="background: #e0dfdf;">
+        <nb-card>
+            <nb-card-body class="p-0 m-0">
+          
+              <nb-tabset fullWidth class="m-0 p-0">
+                <nb-tab tabTitle="View Profile" tabIcon="person-outline" responsive
+                style="font-size: 14px !important; font-weight: 600; padding: 1px !important; color: #333 !important; ">
+                  <ngx-doctor-view></ngx-doctor-view>
+                </nb-tab>
+                <nb-tab tabTitle="Edit Profile" tabIcon="edit-2-outline" responsive
+                style="font-size: 14px !important; font-weight: 600; padding: 1px !important; color: #333 !important; ">
+                  <ngx-doctor-edit-profile></ngx-doctor-edit-profile>
+                </nb-tab>
+                <nb-tab tabTitle="Documents & Uploads" tabIcon="file-add-outline" responsive
+                style="font-size: 14px !important; font-weight: 600; padding: 1px !important; color: #333 !important; ">
+                  <ngx-doctor-file-upload></ngx-doctor-file-upload>
+                </nb-tab>
+                <nb-tab tabTitle="Consultation Timings" tabIcon="clock-outline" responsive
+                style="font-size: 14px !important; font-weight: 600; padding: 1px !important; color: #333 !important; ">
+                    <ngx-doctor-consultation></ngx-doctor-consultation>
+                  </nb-tab>
+                  <nb-tab tabTitle="Payment Settings" tabIcon="credit-card-outline" responsive
+                style="font-size: 14px !important; font-weight: 600; padding: 1px !important; color: #333 !important; ">
+                    <ngx-payment-setting></ngx-payment-setting>
+                  </nb-tab>
+              </nb-tabset>
+          
+            </nb-card-body>
+          </nb-card>
+      
+    </div>
+
+</div>

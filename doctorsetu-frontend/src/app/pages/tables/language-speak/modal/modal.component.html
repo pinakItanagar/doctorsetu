@@ -1,0 +1,23 @@
+<div id="modal-content-wrapper">
+    <header id="modal-header">
+        <h1 id="modal-title">Add Language</h1>
+    </header>
+    <section id="modal-body">
+        <form action="">
+            <div class="form-group">
+                <input type="Text" class="form-control" placeholder="Language Name">
+            </div>
+            <div class="form-group">
+                <input type="text" class=" form-control" placeholder="Language Code">
+            </div>
+        </form>
+    </section>
+    <footer id="modal-footer">
+        <button  id="modal-action-button" class="btn btn-md button_action" type="button" (click)="actionFunction()">
+            Submit
+        </button>
+        <button class="btn btn-md button_cancel" type="button"  id="modal-cancel-button" (click)="closeModal()">
+            Cancel
+        </button>
+    </footer>
+</div>

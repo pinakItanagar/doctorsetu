@@ -1,0 +1,62 @@
+
+.box-view{
+    border-top: 3px solid #684892;
+  }
+  .payment-head{
+    color: #000;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .inthight{
+    font-size: 12px !important;
+    padding-left: 10px !important;
+    padding-right: 5px !important;
+  }
+  .btnhight{
+    font-size: 14px !important;
+  }
+  table {
+      width: 100%;
+    }
+    
+    .mat-form-field {
+      font-size: 14px;
+      width: 100%;
+    }
+    
+    td, th {
+      width: 25% !important;
+    }
+    .table-view{
+      border-top: 2px solid #fdf5f5;
+      border-bottom: 2px solid #fdf5f5;
+    }
+  
+  @media only screen and (max-width: 600px) {
+    .telemedicine a {
+      font-size:11px;
+    }
+    .telemedicine i {
+      font-size:11px;
+    }
+  }
+  .main {
+      float: right;
+      margin-top: 12px;
+  }
+  .mat-form-field-appearance-fill .mat-form-field-flex{
+    background-color: #FFF !important;
+    height: 30px !important;
+  }
+  tr.mat-row, tr.mat-footer-row, tr.mat-header-row {
+      height: unset;
+      border: 1px solid #eee;
+  }
+  .btn-search{
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      font-size: 12px;
+  }

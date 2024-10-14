@@ -1,0 +1,67 @@
+<div class="header-container" >
+  <div class="logo-container">
+    <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline"></nb-icon>
+    </a>
+    <a class="logo"><img src="../../../assets/images/logo.png" alt=""  style="padding-bottom:10px;"/><b style="padding-left: 5px;">Doctor<span style="color:#a2df5f">Setu</span></b></a>
+  </div>
+  <!-- <nb-select [selected]="currentTheme" (selectedChange)="changeTheme($event)" status="primary">
+    <nb-option *ngFor="let theme of themes" [value]="theme.value"> {{ theme.name }}</nb-option>
+  </nb-select> -->
+</div>
+
+<div class="header-container" style="height: 40px; line-height: 50px;">
+  <nb-actions size="small">
+
+    <nb-action class="control-item">
+      <!-- <nb-search type="rotate-layout"></nb-search> -->
+    </nb-action>
+    <nb-action class="control-item" icon="email-outline"></nb-action>
+    <nb-action class="control-item" icon="bell-outline"></nb-action>
+    <nb-action class="user-action" *nbIsGranted="['view', 'user']" >
+      <nb-user [nbContextMenu]="userMenu"
+               [onlyPicture]="userPictureOnly"
+               [name]="user?.name | titlecase"
+               [picture]="user?.picture">
+      </nb-user>
+    </nb-action>
+  </nb-actions>
+  <span style="font-size: 10px; color: #75c448;">{{user.accestype | titlecase}}</span>
+
+</div>
+
+
+<div class="popup {{callstatus ?'pshow':''}}">
+  <div class="centerbox" style="border-color: #75c448;">
+    <div class="pclose" (click)="closepopup()"><i class="fa fa-times " style="font-size: 20px;"></i></div>
+    <section class="mx-2 mb-2 mt-2">
+      <div class="col d-flex justify-content-center align-items-center p-0 m-0">
+        <h5 class="p-0 m-0 mb-2"> Patient {{patientname | titlecase}} Calling</h5>
+      </div>
+      <section class="mx-2 mb-2 mt-2">
+        
+  
+        <span style="padding-left: 1px;">Illnessbrief:{{appointmentremarks}}</span> 
+      </section>
+    </section>
+    <footer id="modal-footer" class="col-12 mb-2 mt-2 d-flex justify-content-center align-items-center">
+     
+      <div class="col m-0 p-0 px-3">
+
+        <button type="button" class="btn btn-sm " (click)="joinagaoracall()" id="modal-action-button">
+          Receive
+        </button>
+        <button type="button" class="btn btn-sm" id="modal-cancel-button" (click)="dontjoinagaoracall()">
+          Reject
+        </button>
+      </div>
+
+      
+    </footer>
+  </div>
+
+
+
+</div>
+
+

@@ -1,0 +1,170 @@
+<nb-card accent="success" class="mx-2 mt-2">
+    <!-- Profile Section -->
+    <div class="row px-2 p-0 m-0 d-flex justify-content-center align-items-center">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-12 m-0 p-0">
+        <div class="col d-flex justify-content-center align-items-center p-0">
+          <img src="{{image}}" alt="img" style="width: 100%; height: auto; background-size: contain;">
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-12 m-0 p-0 small-screen">
+        <div class="m-0 p-0 mb-1 small-screen-mobi">
+          <div class="col p-2 m-0 d-flex justify-content-start align-items-center ">
+            <p class="col-3 m-0 p-0 text-left">Hospital Name :</p>
+            <h6 class="col-9 m-0 p-0 text-left" style="color: #4a8b4a;"><strong>{{hosp_name}}</strong></h6>
+          </div>
+        </div>
+        <div class="m-0 p-0 mb-1 small-screen-mobi">
+          <div class="col p-2 m-0 d-flex justify-content-start align-items-start">
+            <p class="col-3 m-0 p-0 text-left">Address:</p>
+            <p class="col-9 m-0 p-0 text-left" style="color: #7f837f;">{{address}}</p>
+          </div>
+        </div>
+        <div class="m-0 p-0 mb-1 small-screen-mobi">
+          <div class="col p-2 m-0 d-flex justify-content-start align-items-center">
+            <p class="col-3 m-0 p-0 text-left">City:</p>
+            <p class="col-9 m-0 p-0 text-left" style="color: #7f837f;">{{city}}</p>
+          </div>
+        </div>
+        <div class="m-0 p-0 mb-1 small-screen-mobi">
+          <div class="col p-2 m-0 d-flex justify-content-start align-items-center">
+            <p class="col-3 m-0 p-0 text-left">State:</p>
+            <p class="col-9 m-0 p-0 text-left" style="color: #7f837f;">{{state}}</p>
+          </div>
+        </div>
+        <div class="m-0 p-0 mb-1 small-screen-mobi">
+          <div class="col p-2 m-0 d-flex justify-content-start align-items-center">
+            <p class="col-3 m-0 p-0 text-left">Pin code:</p>
+            <p class="col-9 m-0 p-0 text-left" style="color: #7f837f;">{{pin}}</p>
+          </div>
+        </div>
+        
+        <div class="m-0 p-0 mb-1 small-screen-mobi">
+          <div class="col p-2 m-0 d-flex justify-content-start align-items-center">
+            <p class="col-3 m-0 p-0 text-left">Registration Number:</p>
+            <p class="col-9 m-0 p-0 text-left" style="color: #7f837f;">{{registration_number}}</p>
+          </div>
+        </div>
+        <div class="m-0 p-0 mb-1 small-screen-mobi">
+          <div class="col p-2 m-0 d-flex justify-content-start align-items-center">
+            <p class="col-3 m-0 p-0 text-left">MAP Location:</p>
+            <p class="p-0 m-0 px-1"></p>
+            <!-- <p class="col-9 m-0 p-0 text-left" style="color: #7f837f;">{{address}} <a (click)="mapview()" style="color: blue; font-size: 12px; ">View map </a></p> -->
+
+            <p class="col-9 m-0 p-0 text-left" style="color: #7f837f;"> <a (click)="mapview()" style="color: blue; font-size: 12px; ">View map </a></p>
+            
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row mx-2 my-1 d-flex justify-content-center align-items-center" *ngIf="map">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 m-0 p-0">
+    
+        <p class="p-0 m-0 px-1 py-2"><a (click)="mapview()" style="color:red;">Close map </a></p>
+        <agm-map [latitude]="lat" [longitude]="lng" style="height: 300px;">
+          <agm-marker [latitude]="lat" [longitude]="lng" >
+          </agm-marker>
+        </agm-map>
+        
+      </div>
+    </div>
+
+    <div class="row mx-2 my-1 d-flex justify-content-center align-items-center">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 m-0 p-0">
+        <div class="col p-2 m-0 d-flex border-bottom rounded">
+          <p class="col-3 m-0 p-0">Affiliations</p>
+          <p class="col-9 m-0 p-0 font-view" style="color: #7f837f;">{{affiliations}}</p>
+        </div>
+        <div class="col p-2 m-0 d-flex border-bottom rounded">
+          <p class="col-3 m-0 p-0">Specialities</p>
+          <p class="col-9 m-0 p-0 font-view" style="color: #7f837f;">{{specialisation}} </p>
+        </div>
+        <div class="col p-2 m-0 d-flex border-bottom rounded">
+          <p class="col-3 m-0 p-0">Symptom Tags</p>
+          <p class="col-9 m-0 p-0 font-view" style="color: #7f837f;">{{symptoms}} </p>
+        </div>
+      </div>
+      <div class="row w-100 mb-2 m-0 p-0">
+        <div class="col-12 p-2 m-0 border-bottom">
+          <p class="col-lg-3 col-md-3 col-sm-3 col-12 m-0 p-0 mb-1">Short Brief</p>
+          <p class="col-lg-9 col-md-9 col-sm-9 col-12 p-0 m-0" style="color: #7f837f;">{{about}} </p>
+        </div>
+        <div class="col-12 p-2 m-0 border-bottom">
+          <p class="col-lg-3 col-md-3 col-sm-3 col-12 m-0 p-0 mb-1">Achievements</p>
+          <p class="col-lg-9 col-md-9 col-sm-9 col-12 p-0 m-0" style="color: #7f837f;">{{doc_achievements}} </p>
+        </div>
+      </div>
+    </div>
+    <!-- Medi Details -->
+  </nb-card>
+  
+  
+  <nb-card accent="success" class="mx-2">
+    <div class="col-12 mb-2 m-0 p-0">
+      <div class="row p-0 m-0 p-2">
+        <div class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+          <p class="col m-0 p-0 mb-1">Contact Person Name</p>
+          <p class="col p-0 m-0 mb-1 text-left">{{contact_person}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mb-2 m-0 p-0">
+      <div class="row p-0 m-0 p-2">
+        <div
+        class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+        <p class="col m-0 p-0 mb-1">Email ID</p>
+        <p class="col p-0 m-0 mb-1 text-left">{{hospital_email}}</p>
+      </div>
+      <div
+        class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+        <p class="col m-0 p-0 mb-1">Mobile Numbers</p>
+        <p class="col p-0 m-0 mb-1 text-left">{{hospital_ph}}</p>
+      </div>
+      </div>
+    </div>
+    <!-- <div class="col-12 mb-2 m-0 p-0">
+      <div class="row p-0 m-0 p-2">
+        <div
+        class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+        <p class="col m-0 p-0 mb-1">City</p>
+        <p class="col p-0 m-0 mb-1">Bangalore</p>
+      </div>
+      <div
+        class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+        <p class="col m-0 p-0 mb-1">State</p>
+        <p class="col p-0 m-0 mb-1">Karnataka</p>
+      </div>
+      <div
+        class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+        <p class="col  m-0 p-0 mb-1">PIN</p>
+        <p class="col  p-0 m-0 mb-1">500056</p>
+      </div>
+      </div>
+    </div> -->
+    <div class="container">
+      <p class="col-12">Consultation Timings:</p>
+      <div *ngFor="let item of slotDetails | keyvalue">
+        <nb-card class="container p-0 m-0 mb-2">
+          <div class="row p-0 m-0 p-2">
+            <div class="col-lg col-md col-sm col-12 consultblock">
+              <div *ngFor="let day of days  ">
+                <div class="days {{ item.value.days.includes(day.fname)?'selected':''}} "
+                  (click)="toggleconsult(day.fname,item.key,'days')">{{day.name}}</div>
+              </div>
+            </div>
+            <div class="col-lg col-md col-sm col-12 consultblock">
+              <span class="mx-1 consultinput">{{item.value.starttime}}</span>
+              <span class="mx-1 consultinput">{{item.value.endtime}}</span>
+            </div>
+            <!-- <div class="col-lg col-md col-sm col-12 consultblock">
+              <div *ngFor="let atype of appointmentType  ">
+                <div class="consulttype {{ item.value.avaliableMode.includes(atype.name)?'selected':''}} "
+                  (click)="toggleconsult(atype.name,item.key,'appointmentType')"><i class=" {{atype.icon}}"></i></div>
+              </div>
+            </div> -->
+          </div>
+        </nb-card>
+      </div>
+    </div>
+  </nb-card>

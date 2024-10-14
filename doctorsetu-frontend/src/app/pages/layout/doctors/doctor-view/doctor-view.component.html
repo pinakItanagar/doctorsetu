@@ -1,0 +1,299 @@
+<nb-card accent="success" class="mx-2 mt-2">
+  <!-- Profile Section -->
+  <div class="row px-2 p-0 m-0 d-flex justify-content-center align-items-center">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-12 m-0 p-0">
+      <div class="col d-flex justify-content-center align-items-center p-0">
+        <img src="{{profileimg}}" alt="img" style="width: 100%; height: auto; background-size: contain;">
+      </div>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-12 m-0 p-0 small-screen">
+      <div class="m-0 p-0 mb-1 small-screen-mobi">
+        <div class="col p-2 m-0 d-flex justify-content-start align-items-center ">
+          <p class="col-3 m-0 p-0 text-left">Name</p>
+          <h6 class="col-9 m-0 p-0 text-left" style="color: #4a8b4a;"><strong>{{doctor_name}}</strong></h6>
+        </div>
+      </div>
+      <div class="m-0 p-0 mb-1 small-screen-mobi">
+        <div class="col p-2 m-0 d-flex justify-content-start align-items-start">
+          <p class="col-3 m-0 p-0 text-left">Address</p>
+          <p class="col-9 m-0 p-0 text-left" style="color: #7f837f;">{{address}}</p>
+        </div>
+      </div>
+      <div class="m-0 p-0 mb-1 small-screen-mobi">
+        <div class="col p-2 m-0 d-flex justify-content-start align-items-center">
+          <p class="col-3 m-0 p-0 text-left">City</p>
+          <p class="col-9 m-0 p-0 text-left" style="color: #7f837f;">Bangalore</p>
+        </div>
+      </div>
+      <div class="m-0 p-0 mb-1 small-screen-mobi">
+        <div class="col p-2 m-0 d-flex justify-content-start align-items-center">
+          <p class="col-3 m-0 p-0 text-left">State</p>
+          <p class="col-9 m-0 p-0 text-left" style="color: #7f837f;">Karnataka</p>
+        </div>
+      </div>
+      <div class="m-0 p-0 mb-1 small-screen-mobi">
+        <div class="col p-2 m-0 d-flex justify-content-start align-items-center">
+          <p class="col-3 m-0 p-0 text-left">Pin code</p>
+          <p class="col-9 m-0 p-0 text-left" style="color: #7f837f;">500037</p>
+        </div>
+      </div>
+      <div class="m-0 p-0 mb-1 small-screen-mobi">
+        <div class="col p-2 m-0 d-flex justify-content-start align-items-center">
+          <p class="col-3 m-0 p-0 text-left">Date of Birth</p>
+          <p class="col-9 m-0 p-0 text-left" style="color: #7f837f;">{{doc_dob}}</p>
+        </div>
+      </div>
+      <div class="m-0 p-0 mb-1 small-screen-mobi">
+        <div class="col p-2 m-0 d-flex justify-content-start align-items-center">
+          <p class="col-3 m-0 p-0 text-left">Gender</p>
+          <p class="col-9 m-0 p-0 text-left" style="color: #7f837f;">{{gender | titlecase}}</p>
+        </div>
+      </div>
+      <div class="m-0 p-0 mb-1 small-screen-mobi">
+        <div class="col p-2 m-0 d-flex justify-content-start align-items-center">
+          <p class="col-3 m-0 p-0 text-left">Mobile No</p>
+          <p class="col-9 m-0 p-0 text-left" style="color: #7f837f;">+91- {{phone}}</p>
+        </div>
+      </div>
+      <div class="m-0 p-0 mb-1 small-screen-mobi">
+        <div class="col p-2 m-0 d-flex justify-content-start align-items-center">
+          <p class="col-3 m-0 p-0 text-left">Aadhaar No</p>
+          <p class="col-9 m-0 p-0 text-left" style="color: #7f837f;">{{aadhaar}}</p>
+        </div>
+      </div>
+      <div class="m-0 p-0 mb-1 small-screen-mobi">
+        <div class="col p-2 m-0 d-flex justify-content-start align-items-center">
+          <p class="col-3 m-0 p-0 text-left">Email Id</p>
+          <p class="col-9 m-0 p-0 text-left" style="color: #7f837f;">{{email}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Profile Section -->
+  <!-- Medi Details -->
+  <div class="row mx-2 my-1 d-flex justify-content-center align-items-center">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 m-0 p-0">
+      <!-- <div class="col p-2 m-0 d-flex justify-content-start align-items-center border-bottom">
+        <p class="col-3 m-0 p-0">StateMC</p>
+        <p class="col-9 m-0 p-0 text-left" style="color: #7f837f;">--</p>
+      </div> -->
+      <div class="col p-2 m-0 d-flex border-bottom rounded">
+        <p class="col-3 m-0 p-0">SMC No</p>
+        <p class="col-9 m-0 p-0 font-view" style="color: #7f837f;">{{smc}}</p>
+      </div>
+      <div class="col p-2 m-0 d-flex border-bottom rounded">
+        <p class="col-3 m-0 p-0">IMR No</p>
+        <p class="col-9 m-0 p-0 font-view" style="color: #7f837f;">{{imr}} </p>
+      </div>
+      <div class="col p-2 m-0 d-flex border-bottom rounded">
+        <p class="col-3 m-0 p-0">Qualification</p>
+        <p class="col-9 m-0 p-0 font-view" style="color: #7f837f;">{{qualification}} </p>
+      </div>
+      <div class="col p-2 m-0 d-flex border-bottom rounded">
+        <p class="col-3 m-0 p-0">Specialization</p>
+        <p class="col-9 m-0 p-0 font-view" style="color: #7f837f;">{{specialisation}}</p>
+      </div>
+      <div class="col p-2 m-0 d-flex border-bottom rounded">
+        <p class="col-3 m-0 p-0">Languages Spoken</p>
+        <p class="col-9 m-0 p-0 font-view" style="color: #7f837f;">{{languages |  titlecase}}</p>
+      </div>
+    </div>
+    <div class="row w-100 mb-2 m-0 p-0">
+      <div class="col-12 p-2 m-0 border-bottom">
+        <p class="col-lg-3 col-md-3 col-sm-3 col-12 m-0 p-0 mb-1">Symptoms Treated</p>
+        <p class="col-lg-9 col-md-9 col-sm-9 col-12 p-0 m-0 " style="color: #7f837f;">{{ symptoms }}</p>
+      </div>
+      <div class="col-12 p-2 m-0 border-bottom">
+        <p class="col-lg-3 col-md-3 col-sm-3 col-12 m-0 p-0 mb-1">Short Brief</p>
+        <p class="col-lg-9 col-md-9 col-sm-9 col-12 p-0 m-0" style="color: #7f837f;">{{about}} </p>
+      </div>
+      <div class="col-12 p-2 m-0 border-bottom">
+        <p class="col-lg-3 col-md-3 col-sm-3 col-12 m-0 p-0 mb-1">Achievements</p>
+        <p class="col-lg-9 col-md-9 col-sm-9 col-12 p-0 m-0" style="color: #7f837f;">{{doc_achievements}} </p>
+      </div>
+    </div>
+  </div>
+  <!-- Medi Details -->
+</nb-card>
+
+
+<nb-card accent="success" class="mx-2">
+  <div class="col-12 mb-2 m-0 p-0">
+    <div class="row p-0 m-0 p-2">
+      <div class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+        <p class="col m-0 p-0 mb-1">Clinic</p>
+        <p class="col p-0 m-0 mb-1 text-left">{{haveclinic}}</p>
+      </div>
+      <div class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+        <p class="col m-0 p-0 mb-1">Clinic Name</p>
+        <p class="col p-0 m-0 mb-1 text-left">{{clinicname}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 mb-2 m-0 p-0">
+    <div class="row p-0 m-0 p-2">
+      <div
+      class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+      <p class="col m-0 p-0 mb-1">Map Location</p>
+      <p class="col p-0 m-0 mb-1 text-left">{{doc_clinic_address}}</p>
+    </div>
+    <div
+      class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+      <p class="col m-0 p-0 mb-1">Clinic Address</p>
+      <p class="col p-0 m-0 mb-1 text-left">{{doc_clinic_address}}</p>
+    </div>
+    </div>
+  </div>
+  <div class="col-12 mb-2 m-0 p-0">
+    <div class="row p-0 m-0 p-2">
+      <div
+      class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+      <p class="col m-0 p-0 mb-1">City</p>
+      <p class="col p-0 m-0 mb-1">Bangalore</p>
+    </div>
+    <div
+      class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+      <p class="col m-0 p-0 mb-1">State</p>
+      <p class="col p-0 m-0 mb-1">Karnataka</p>
+    </div>
+    <div
+      class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+      <p class="col  m-0 p-0 mb-1">PIN</p>
+      <p class="col  p-0 m-0 mb-1">500056</p>
+    </div>
+    </div>
+  </div>
+
+  <!-- 
+
+  <div class="row m-0 p-0">
+    <div class="col-12 col-lg col-md col-sm mt-2 mb-2 m-0 p-0 mx-1" *ngFor="let slotDetail of slotDetails;">
+
+      <div class="m-0 mb-1 d-flex justify-content-between align-items-center">
+        <nb-card class=" mx-1 p-0">
+          <div class="col justify-content-between align-items-center">
+
+            <button *ngIf="slotDetail.days.includes('monday')"
+              class="btn btn-success btn-sm  m-1 week-option">Mon</button>
+            <button *ngIf="!slotDetail.days.includes('monday')" class="btn  btn-sm btn-col m-1 week-option">Mon</button>
+
+            <button *ngIf="slotDetail.days.includes('tuesday')"
+              class="btn btn-success btn-sm   m-1 week-option">Tue</button>
+            <button *ngIf="!slotDetail.days.includes('tuesday')"
+              class="btn  btn-sm btn-col  m-1 week-option">Tue</button>
+
+            <button *ngIf="slotDetail.days.includes('wednesday')"
+              class="btn btn-success btn-sm   m-1 week-option">Wen</button>
+            <button *ngIf="!slotDetail.days.includes('wednesday')"
+              class="btn btn-success btn-sm   m-1 week-option">Wen</button>
+
+            <button *ngIf="slotDetail.days.includes('thursday')"
+              class="btn btn-success btn-sm   m-1 week-option">Thu</button>
+            <button *ngIf="!slotDetail.days.includes('thursday')"
+              class="btn btn-success btn-sm   m-1 week-option">Thu</button>
+
+
+            <button *ngIf="slotDetail.days.includes('friday')" class="btn  btn-sm  btn-col m-1 week-option">Fri</button>
+            <button *ngIf="!slotDetail.days.includes('friday')"
+              class="btn btn-success btn-sm  m-1 week-option">Fri</button>
+
+
+            <button *ngIf="slotDetail.days.includes('saturday')"
+              class="btn  btn-sm btn-col  m-1 week-option">Sat</button>
+            <button *ngIf="!slotDetail.days.includes('saturday')"
+              class="btn  btn-sm btn-col  m-1 week-option">Sat</button>
+
+            <button *ngIf="slotDetail.days.includes('sunday')" class="btn  btn-sm btn-col  m-1 week-option">Sun</button>
+            <button *ngIf="!slotDetail.days.includes('sunday')"
+              class="btn  btn-sm  btn-col  m-1 week-option">Sun</button>
+
+          </div>
+        </nb-card>
+      </div>
+      <div class="m-0 mb-1 d-flex justify-content-between align-items-center">
+        <nb-card class=" mx-1 p-0">
+          <div class="col p-2 d-flex justify-content-between align-items-center">
+            <span class="mx-1">Form : {{slotDetail.starttime}}</span>
+            <span class="mx-1">To : {{slotDetail.endtime}}</span>
+          </div>
+        </nb-card>
+      </div>
+      <div class="m-0 mb-1 d-flex justify-content-between align-items-center">
+        <nb-card class=" mx-1 p-0">
+          <div class="col d-flex justify-content-between align-items-center">
+
+            <button *ngIf="slotDetail.avaliableMode.includes('call')"
+              class="btn btn-success btn-sm material-icons  m-1 week-option">
+
+              call
+            </button>
+            <button *ngIf="!slotDetail.avaliableMode.includes('call')"
+              class="btn btn-success btn-sm  material-icons m-1 week-option">
+
+              call
+            </button>
+
+            <button *ngIf="slotDetail.avaliableMode.includes('video')"
+              class="btn  btn-sm material-icons btn-col  m-1 week-option">
+
+              videocam
+            </button>
+            <button *ngIf="!slotDetail.avaliableMode.includes('video')"
+              class="btn  btn-sm material-icons btn-col  m-1 week-option">
+
+              videocam
+            </button>
+
+            <button *ngIf="slotDetail.avaliableMode.includes('whatsapp')"
+              class="btn  btn-sm material-icons btn-col  m-1 week-option">
+
+              maps_ugc
+            </button>
+            <button *ngIf="!slotDetail.avaliableMode.includes('whatsapp')"
+              class="btn  btn-sm material-icons btn-col  m-1 week-option">
+
+              maps_ugc
+            </button>
+
+            <button *ngIf="slotDetail.avaliableMode.includes('clinic')"
+              class="btn btn-success btn-sm material-icons   m-1 week-option">
+
+              home
+            </button>
+            <button *ngIf="!slotDetail.avaliableMode.includes('clinic')"
+              class="btn btn-success btn-sm material-icons   m-1 week-option ">
+
+              home
+            </button>
+
+          </div>
+        </nb-card>
+      </div>
+    </div>
+  </div> -->
+  <div class="container">
+    <p class="col-12">Consultation Timings:</p>
+    <div *ngFor="let item of slotDetails | keyvalue">
+      <nb-card class="container p-0 m-0 mb-2">
+        <div class="row p-0 m-0 p-2">
+          <div class="col-lg col-md col-sm col-12 consultblock">
+            <div *ngFor="let day of days  ">
+              <div class="days {{ item.value.days.includes(day.fname)?'selected':''}} "
+                (click)="toggleconsult(day.fname,item.key,'days')">{{day.name}}</div>
+            </div>
+          </div>
+          <div class="col-lg col-md col-sm col-12 consultblock">
+            <span class="mx-1 consultinput">{{item.value.starttime}}</span>
+            <span class="mx-1 consultinput">{{item.value.endtime}}</span>
+          </div>
+          <div class="col-lg col-md col-sm col-12 consultblock">
+            <div *ngFor="let atype of appointmentType  ">
+              <div class="consulttype  {{ item.value.avaliableMode.includes(atype.name)?'selected':''}} "
+                (click)="toggleconsult(atype.name,item.key,'appointmentType')"><i class=" {{atype.icon}}"></i></div>
+            </div>
+          </div>
+        </div>
+      </nb-card>
+    </div>
+  </div>
+</nb-card>

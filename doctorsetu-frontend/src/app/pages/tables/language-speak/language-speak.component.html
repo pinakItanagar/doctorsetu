@@ -1,0 +1,210 @@
+<!-- Language Spoken View -->
+<div class="wrapper  m-1 position-relative">
+  <div size="" accent="info" class="bg-none mx-1">
+    <!-- Header View -->
+    <!-- <nb-card-header>
+    <div class="d-flex flex-direction-row justify-content-between w-100 align-items-center">
+      <div>
+        <span class="display-6"> Details</span>
+      </div>
+      <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#myModal">
+        Add
+      </button>
+  </div>
+  </nb-card-header> -->
+    <div class="d-flex flex-direction-row justify-content-between w-100 align-items-center head">
+      <div class="symptom-head">
+        <span>Language Details </span>
+      </div>
+      <button type="button" class="btn btn-primary button btn-sm" mat-raised-button (click)="showhidebox()"
+        [ngClass]="status ? 'hide' : 'show'">
+        + Add New
+      </button>
+    </div>
+    <!-- Header View -->
+    <!-- <div fxLayout fxLayoutAlign="center center">
+    <mat-form-field fxFlex="40%">
+      
+      <input matInput type="text"  (keyup)="doFilter($event.target.value)" placeholder="Search">
+    </mat-form-field>
+  </div> -->
+    <!-- Add View Fade -->
+    <div class="p-1 bg-white mt-1 rounded mb-2 px-2 box-view" [ngClass]="editstatus ? 'show' : 'hide'">
+      <div class="row">
+        <div class="col-lg col-md col-sm col-12 mb-1">
+          <p class="col p-0 m-0 mb-1" style="font-size: 14px; font-weight: 600;">Language<span class="red-star">*</span></p>
+          <div class="form-group p-0 col m-0">
+            <input type="Text" class="form-control" [(ngModel)]="languagename" placeholder="Name" maxlength="50"
+              style="font-size: 12px; font-weight: 600;">
+          </div>
+        </div>
+        <div class="col-lg col-md col-sm col-12 mb-1">
+          <p class="col p-0 m-0 mb-1" style="font-size: 14px; font-weight: 600;">Code<span class="red-star">*</span></p>
+          <div class="form-group p-0 col m-0">
+            <input type="Text" class="form-control" [(ngModel)]="languagecode" placeholder="en" maxlength="2"
+              style="font-size: 12px;">
+          </div>
+        </div>
+        <div class="col mb-1">
+          <p class="col p-0 m-0 mb-1" style="font-size: 14px; font-weight: 600;">Status<span class="red-star">*</span></p>
+          <div class="input-group">
+            <select class="custom-select inthight" id="inputGroupSelect01 placeholder" [(ngModel)]="editlangugaestatus">
+              <option value="active" >Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div>
+      </div>
+      </div>
+      <footer id="modal-footer " class="d-flex justify-content-end  mt-1">
+        <button id="modal-action-button" [disabled]="languagecode == '' || languagename == ''" class="btn btn-sm button_action" type="button" (click)="openModaledit()"
+          style="font-size: 12px;">
+          Update
+        </button>
+        <button class="btn btn-sm button_cancel" type="button" id="modal-cancel-button"
+          (click)="showhideboxeditcancel()" style="font-size: 12px;">
+          Cancel
+        </button>
+      </footer>
+    </div>
+    <!-- Add View Fade -->
+    <!-- Edit View Fade -->
+    <div class="p-1 bg-white mt-1 rounded mb-2 px-2 box-view" [ngClass]="status ? 'show' : 'hide'">
+      <div class="row">
+        <div class="col-lg col-md col-sm col-12 mb-1">
+          <p class="col p-0 m-0 mb-1" style="font-size: 14px; font-weight: 600;">Language <span class="red-star">*</span></p>
+          <div class="form-group p-0 col m-0">
+            <input type="Text" class="form-control" [(ngModel)]="languagename" placeholder="Enter Language Name" maxlength="50"
+              style="font-size: 12px;">
+          </div>
+        </div>
+        <div class="col-lg col-md col-sm col-12 mb-1">
+          <p class="col p-0 m-0 mb-1" style="font-size: 14px; font-weight: 600;">Code<span class="red-star">*</span></p>
+          <div class="form-group p-0 col m-0">
+            <input type="Text" class="form-control" [(ngModel)]="languagecode" placeholder="Enter Language Code" maxlength="2"  
+              style="font-size: 12px;">
+          </div>
+        </div>
+        <div class="col mb-1">
+          <p class="col p-0 m-0 mb-1" style="font-size: 14px; font-weight: 600;">Status<span class="red-star">*</span></p>
+          <div class="input-group">
+            <select class="custom-select inthight" id="inputGroupSelect01 placeholder" [(ngModel)]="langugaestatus">
+              <option value="active" >Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div>
+      </div>
+      </div>
+      <footer id="modal-footer " class="d-flex justify-content-end  mt-1">
+        <button id="modal-action-button" class="btn btn-sm button_action" [disabled]="languagecode == '' || languagename == ''" type="button" (click)="openModal()">
+          Submit
+        </button>
+        <button class="btn btn-md button_cancel btn-sm" type="button" id="modal-cancel-button" (click)="showhidebox()">
+          Cancel
+        </button>
+      </footer>
+    </div>
+    <!-- Edit View Fade -->
+    <div class="bg-white  table-top">
+      <!-- <div class="row mx-4 mt-3 mb-1">
+      <div class="form-group col m-0">
+        <input type="Text" class="form-control" placeholder="Language Name">
+      </div>
+      <div class="form-group m-0 col">
+        <input type="text" class=" form-control" placeholder="Language Code">
+      </div>
+      <button type="button" class="btn btn-primary button">Submit</button>
+    </div> -->
+      <!-- Search View -->
+      <div class="main d-flex justyfy-content-end aligin-items-center">
+        <div id="custom-search-input mb-2" style="z-index: 9999;">
+          <div class="input-group col-md-12 mb-2">
+            <input type="text" class="  search-query form-control" placeholder="Search"
+              (keyup)="doFilter($event.target.value)" style="font-size: 12px;" />
+            <span class="input-group-btn btn btn-primary mr-2 btn-search">
+              <i class="fas fa-search " aria-hidden="true"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- Search View -->
+      <!-- Table View -->
+      <div class="col col-lg col-md col-sm m-0 p-0 justyfy-content-center align-items-center table-scroll">
+        <table mat-table [dataSource]="dataSource" matSort class=" table-view">
+          <!-- mat-elevation-z8 -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-head"> Sl.No. </th>
+            <td mat-cell *matCellDef="let element; let i=index;"> {{element.sl_num}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-head">Language Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name | titlecase}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-head">Language Code </th>
+            <td mat-cell *matCellDef="let element"> {{element.code | titlecase}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-head"> Status </th>
+            <td mat-cell *matCellDef="let element"> {{element.status | titlecase}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef class="table-head" style="text-align: center;"> Action </th>
+
+            <td mat-cell *matCellDef="let element" style="text-align: center;">
+              <span class="edit text-center m-auto">
+                <i class="far fa-edit  btn btn-primary text-center p-1 btn-sm mx-1" aria-hidden="true"
+                  (click)="showhideboxedit(element)" style="font-size: 12px;" data-toggle="tooltip" title="Edit"></i>
+                <i class="fas fa-trash  btn btn-danger text-center btn-sm p-1 mx-1"
+                  (click)="removeLanguage(element.name)" (click)="deleteModalpopup(element.name)" aria-hidden="true"
+                  style="font-size: 12px;" data-toggle="tooltip" title="Delete"></i>
+              </span>
+              <!-- (click)="removeLanguage(element.name)" (click)="deleteModalpopup(element.name)"
+                aria-hidden="true"></i></span> -->
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+      <!-- Table View -->
+      <!-- pagination -->
+      <mat-paginator [pageSizeOptions]="[10, 15, 20, 50]" showFirstLastButtons></mat-paginator>
+      <!-- pagination -->
+    </div>
+  </div>
+</div>
+<!-- Language Spoken View -->
+
+<div class="popup {{deleteit ?'pshow':''}}">
+  <div class="centerbox">
+    <div class="pclose" ><i class="fa fa-times " (click)="closealert()" style="font-size: 20px;"></i></div>
+    <section class="mx-2 mb-2 mt-2">
+      <div class="col d-flex justify-content-center align-items-center p-0 m-0">
+        <h5 class="p-0 m-0 mb-2">Confirm</h5>
+      </div>
+      <div class="col text-left px-3 mb-1 p-0 m-0">
+        <p class="p-0 m-0 mb-2" ><strong></strong> <span style="padding-left: 5px;"> Are you sure to delete Language  {{lang_delete}} ?</span></p>
+        
+      </div>
+    </section>
+    <footer id="modal-footer" style="padding-top: 100px;" class="col-12 mb-2 d-flex justify-content-center align-items-center">
+     
+      <div class="col m-0 p-0 px-3" >
+
+        <button type="button" class="btn btn-sm "  (click)="deletelanguage()" id="modal-action-button">
+          Yes
+        </button>
+        <button type="button" class="btn btn-sm "  (click)="closealert()" id="modal-cancel-button">
+          No
+        </button>
+      </div>
+
+      
+    </footer>
+  </div>
+</div>

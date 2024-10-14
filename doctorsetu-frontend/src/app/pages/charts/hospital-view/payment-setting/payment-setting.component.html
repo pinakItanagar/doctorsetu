@@ -1,0 +1,59 @@
+<div class="wrapper m-3 p-1 position-relative">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <p class="col-12 m-0 p-0 pb-1" style="font-size: 14px; font-weight: 600;">Account Number</p>
+            <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+              <input type="text" [(ngModel)]="doc_account_number" placeholder="Enter Detail Account Number"
+              class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+            </div>
+          </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+          <p class="col-12 m-0 p-0 pb-1" style="font-size: 14px; font-weight: 600;">GST Number</p>
+          <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+
+            <input type="text" [(ngModel)]="doc_gst_no" placeholder="Enter your GST Number"
+            class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+          </div>
+        </div>
+        
+    </div>
+    <div class="row">
+        
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+          <p class="col-12 m-0 p-0 pb-1" style="font-size: 14px; font-weight: 600;">Account Holder Name</p>
+          <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+
+            <input type="text" [(ngModel)]="doc_account_name" placeholder="Enter Your Full Name"
+            class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <p class="col-12 m-0 p-0 pb-1" style="font-size: 14px; font-weight: 600;">IFSC Number</p>
+            <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+  
+              <input type="text" [(ngModel)]="doc_ifsc_code" placeholder="Enter IFSC Number"
+              class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+            </div>
+          </div>
+    </div>
+    <div class="row">
+        <div class="col-lg col-md col-sm-12 col-12">
+          <p class="col-12 m-0 p-0 pb-1" style="font-size: 14px; font-weight: 600;">Branch Name</p>
+          <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+
+            <input type="text" [(ngModel)]="doc_branch_name" placeholder="Area Located"
+            class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+          </div>
+        </div>
+        
+    </div>
+    <div class="row justify-content-end">
+        <div class="row">
+          <div class="col mt-3 mb-3 mr-3">
+            <button type="submit" class="btn btn-primary btn-sm  float-right" (click)="upload()"
+              style="font-size: 12px;" [disabled]="!doc_ifsc_code || !doc_branch_name || !doc_account_name || !doc_account_number">Update</button>
+          </div>
+        </div>
+      </div>
+</div>
+

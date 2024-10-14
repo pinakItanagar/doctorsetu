@@ -1,0 +1,360 @@
+<div class="wrapper  m-1 position-relative">
+  <div size="" accent="info" class="bg-none mx-1">
+
+    <div class="d-flex flex-direction-row justify-content-between w-100 align-items-center head">
+
+      <div class="symptom-head">
+        <span>Doctors </span>
+      </div>
+
+      <!-- <button type="button" class="btn btn-primary button btn-sm" mat-raised-button>
+        + Add New
+      </button> -->
+
+    </div>
+
+    <div class=" bg-white  table-top box-view">
+      <div class="row p-0 m-0 mt-2">
+        <div class="col-lg col-md col-sm col-12 mb-1">
+          <div class="card-body p-0">
+            <p class=" mb-1 px-0" style="font-size: 14px; font-weight: 600;">Hospital </p>
+            <div class="input-group ">
+              <select class="custom-select inthight" id="inputGroupSelect01 placeholder" style="font-size: 12px; box-shadow: none;">
+                <option selected>Select All</option>
+                <option value="1">Max Hospital</option>
+                <option value="2">Appolo Hospital</option>
+                <option value="3">Narayana Hospital</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-md col-sm col-12 mb-1">
+          <div class="card-body p-0" *ngIf="accestype != 'doctor'">
+            <p class=" mb-1 px-0 " style="font-size: 14px; font-weight: 600;">Doctor </p>
+            <div class="input-group">
+              <mat-form-field style="width:100%; font-size: 12px; margin-top: 5px;">
+                <mat-select [formControl]="bankCtrl" placeholder="" #singleSelect>
+                  <mat-option>
+                    <ngx-mat-select-search placeholderLabel="Type Doctor Name" noEntriesFoundLabel="No matching doctor"[formControl]="bankFilterCtrl"></ngx-mat-select-search>
+                  </mat-option>
+                  <mat-option *ngFor="let bank of filteredBanks | async" [value]="bank">
+                    {{bank.name.first}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row p-0 m-0">
+        <div class="col-lg col-md col-sm col-12 mb-1">
+          <div class="card-body p-0">
+            <p class=" mb-1 px-0" style="font-size: 14px; font-weight: 600;">State </p>
+            <div class="input-group">
+              <mat-form-field style="width:100%; font-size: 12px;">
+                <mat-select [formControl]="bankCtrl3" placeholder="" #singleSelect>
+                  <mat-option>
+                    <ngx-mat-select-search placeholderLabel="Enter pin State" noEntriesFoundLabel="No matching state"[formControl]="bankFilterCtrl3"></ngx-mat-select-search>
+                  </mat-option>
+                  <mat-option *ngFor="let bank3 of filteredBanks3 | async" [value]="bank3">
+                    {{bank3.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-md col-sm col-12 mb-1 ">
+          <div class="card-body p-0">
+            <p class=" mb-1 px-0" style="font-size: 14px; font-weight: 600;">City </p>
+            <div class="input-group">
+              <mat-form-field style="width:100%; font-size: 12px;">
+                <mat-select [formControl]="bankCtrl4" placeholder="" #singleSelect>
+                  <mat-option>
+                    <ngx-mat-select-search placeholderLabel="Enter pin city" noEntriesFoundLabel="No matching pin"[formControl]="bankFilterCtrl4"></ngx-mat-select-search>
+                  </mat-option>
+                  <mat-option *ngFor="let bank4 of filteredBanks4 | async" [value]="bank4">
+                    {{bank4.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-md col-sm col-12 mb-1">
+          <div class="card-body p-0">
+            <p class=" mb-1 px-0" style="font-size: 14px; font-weight: 600;">Pin</p>
+            <div class="input-group">
+              <mat-form-field style="width:100%; font-size: 12px;">
+                <mat-select [formControl]="bankCtrl2" placeholder="" #singleSelect>
+                  <mat-option>
+                    <ngx-mat-select-search placeholderLabel="Enter pin code" noEntriesFoundLabel="No matching pin"[formControl]="bankFilterCtrl2"></ngx-mat-select-search>
+                  </mat-option>
+                  <mat-option *ngFor="let bank2 of filteredBanks2 | async" [value]="bank2">
+                    {{bank2.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row m-0 p-0 mb-1">
+        <div class="col-lg col-md col-sm col-12 mb-1 mx-1">
+          <div class="column">
+            <div class="card-body p-0">
+              <button type="submit" (click)="doctorsearch()" class="btn btn-primary btn-sm  float-right">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="main d-flex justyfy-content-end aligin-items-center">
+          <div id="custom-search-input mb-2">
+            <div class="input-group col-md-12 mb-2">
+              <input type="text" (keyup)="doFilter($event.target.value)" class="search-query form-control"
+                placeholder="Search" style="font-size: 12px;" />
+              <span class="input-group-btn btn btn-primary mr-2 btn-search">
+                <i class="fas fa-search " aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="col col-lg col-md col-sm m-0 p-0 d-flex justify-content-center align-items-center table-scroll">
+        
+        <table mat-table [dataSource]="dataSource" matSort class=" table-view ">
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef class="table-head">Sl.No. </th>
+            <td mat-cell *matCellDef="let element; let i=index;"> {{element._id}} </td>
+          </ng-container>
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef class="table-head"> SMC No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.doc_smcregno || " "}} </td>
+          </ng-container>
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef class="table-head" style="width: 400px;"> Doctor Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name.first}} </td>
+          </ng-container>
+          <ng-container matColumnDef="Qualification">
+            <th mat-header-cell *matHeaderCellDef class="table-head"> Qualification </th>
+            <td mat-cell *matCellDef="let element" > <span *ngIf="element.specializations">{{element.specializations[0].degree}}</span> </td>
+          </ng-container>
+          <ng-container matColumnDef="Specialization">
+            <th mat-header-cell *matHeaderCellDef class="table-head"> Specialization </th>
+            <td mat-cell *matCellDef="let element"> <span *ngIf="element.specializations">{{element.specializations[0].name}}</span> </td>
+          </ng-container>
+          <ng-container matColumnDef="VerificationStatus">
+            <th mat-header-cell *matHeaderCellDef class="table-head"> Verification</th>
+            <td mat-cell *matCellDef="let element"> 
+              <span class="edit d-flex flex-direction-row justify-content-center align-items-center">
+                <i class="fas  btn  btn-sm mx-1 {{element.varified?'btn-success fa-check':'btn-danger 
+                fa-question'}}" (click)="showpopup(element)" aria-hidden="true" style="font-size: 12px;"></i>
+              </span>
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="Clinic">
+            <th mat-header-cell *matHeaderCellDef class="table-head"> Clinic </th>
+            <td mat-cell *matCellDef="let element"> {{element.Clinic}} </td>
+          </ng-container>
+          <ng-container matColumnDef="ClinicCity">
+            <th mat-header-cell *matHeaderCellDef class="table-head"> Clinic City </th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinicCity}} </td>
+          </ng-container>
+          <ng-container matColumnDef="ClinicPIN">
+            <th mat-header-cell *matHeaderCellDef class="table-head"> Clinic PIN </th>
+            <td mat-cell *matCellDef="let element"> {{element.ClinicPIN}} </td>
+          </ng-container>
+          <ng-container matColumnDef="NoofConsultations">
+            <th mat-header-cell *matHeaderCellDef class="table-head"> No of Completed Consultations </th>
+            <td mat-cell *matCellDef="let element"> {{element.completed}} </td>
+          </ng-container>
+          <ng-container matColumnDef="AppRegnDate">
+            <th mat-header-cell *matHeaderCellDef class="table-head" style="width: 130px;"> App Regn Date</th>
+            <td mat-cell *matCellDef="let element"> {{element.createdAt || "10-08-2020"}} </td>
+          </ng-container>
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef class="table-head"> Action </th>
+            <td mat-cell *matCellDef="let element">
+              <span class="edit d-flex flex-direction-row justify-content-center align-items-center">
+                <i class="fa fa-eye btn btn-success btn-sm mx-1" (click)="editdpctor(element)" 
+                aria-hidden="true" style="font-size: 12px;"></i>
+                <!-- <i class="far fa-edit btn btn-primary btn-sm mx-1" (click)="editdpctor(element)" 
+                aria-hidden="true" style="font-size: 12px;"></i> -->
+              </span>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+      </div>
+
+      <mat-paginator [length]="100" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]">
+      </mat-paginator>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="popup {{popupstatus ?'pshow':''}}">
+  <div class="centerbox">
+    <div class="pclose" (click)="closepopup()"><i class="fa fa-times " style="font-size: 20px;"></i></div>
+    <section class="mb-2 mt-2" style=" min-height: 175px;">
+      
+      <div class="col d-flex justify-content-center align-items-center p-0 m-0"
+        style="border-bottom: 1px solid #b1b1b1;">
+        <h5 class="p-0 m-0 mb-2">Verify Doctor</h5>
+      </div>
+
+      <div class="m-0 p-0 mt-1" *ngFor="let verify of verify.verifylist;let indexOfelement=index;">
+
+        <div class="form-check font-weight-bolder">
+          <!-- <input class="form-check-input" type="checkbox" 
+          name="inlineRadioOptions" id="inlineRadio1" [(ngModel)]="verify.verify" [checked]="verify.verify"> -->
+          <label class="form-check-label" for="inlineRadio1">{{verify.name | titlecase}}</label>
+        </div>
+
+        <div class="form-check justify-content-center mt-1 ml-3">
+          <input type="radio" name="1+{{indexOfelement}}" id="1+{{indexOfelement}}" class="with-gap" [(ngModel)]="verify.verify" [value]="0">
+          <label class="form-check-label mx-2" for="yes" >Yes</label>
+          
+          <input type="radio" name="2+{{indexOfelement}}" id="2+{{indexOfelement}}" class="with-gap" [(ngModel)]="verify.verify" [value]="1" >
+
+          <label class="form-check-label mx-2" for="no" >No</label>
+
+
+          <input type="radio" name="3+{{indexOfelement}}" id="3+{{indexOfelement}}" class="with-gap" [(ngModel)]="verify.verify" [value]="3" >
+          <label class="form-check-label mx-2" for="na" >NA</label>
+        </div>
+
+      </div>
+
+      <div class="form-check  font-weight-bolder" style="padding-top: 10px;padding-right: 10px;">
+
+        <label class="form-check-label" for="inlineRadio1">Comments</label>
+        <textarea [(ngModel)]="verify.verifycomments" 
+        class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+        </textarea>
+
+      </div>
+
+    </section>
+    <footer id="modal-footer" class="col-12 mb-2 d-flex justify-content-center align-items-center" style="border-top: 1px solid #b1b1b1;">
+      <div class="col m-0 p-0 px-3 mb-2 mt-2">
+        <button type="button" class="btn btn-success btn-sm mx-2" 
+        (click)="closepopupverify()" style="float: left;"> Verify </button>
+        <button type="button" class="btn  btn-danger btn-sm mx-2" 
+        (click)="closepopupreject()" style="float: left;">Reject</button>
+        <button type="button" class="btn btn-default btn-sm mx-2" id="modal-cancel-button"
+         (click)="closepopup()" style="float: right;">Cancel</button>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<div class="popup {{popupstatusview ?'pshow':''}}">
+  <div class="centerbox">
+    <div class="pclose" (click)="closepopup()"><i class="fa fa-times " style="font-size: 20px;"></i></div>
+    <section class="mb-2 mt-2" style=" min-height: 175px;">
+      
+      <div class="col d-flex justify-content-center align-items-center p-0 m-0"
+        style="border-bottom: 1px solid #b1b1b1;">
+        <h5 class="p-0 m-0 mb-2">View Verify Doctor</h5>
+      </div>
+
+      <div class="col mt-2  p-0 m-0" *ngFor="let verify of verify.verifylist">
+
+        
+        <div class="form-check font-weight-bolder ">
+          <!-- <input class="form-check-input" type="checkbox" 
+          name="inlineRadioOptions" id="inlineRadio1" [(ngModel)]="verify.verify" [checked]="verify.verify"> -->
+          <label class="form-check-label "  for="inlineRadio1">{{verify.name}}</label>
+        </div>
+        <div class="form-check  justify-content-center mt-1 ml-3">
+
+        <input type="radio" name="1+{{indexOfelement}}" [disabled]="true" id="1+{{indexOfelement}}" class="with-gap" [(ngModel)]="verify.verify" [value]="0">
+        <label class="form-check-label ml-2" for="yes"  style="padding-right: 15px;">Yes</label>
+        
+        <input type="radio" name="2+{{indexOfelement}}" [disabled]="true" id="2+{{indexOfelement}}" class="with-gap" [(ngModel)]="verify.verify" [value]="1" >
+
+        <label class="form-check-label ml-2" for="no" style="padding-right: 15px;">No</label>
+
+
+        <input type="radio" name="3+{{indexOfelement}}"  [disabled]="true" id="3+{{indexOfelement}}" class="with-gap" [(ngModel)]="verify.verify" [value]="3" >
+        <label class="form-check-label ml-2" for="na" style="padding-right: 15px;">NA</label>
+        
+      </div>
+
+      </div>
+
+      <div class="form-check  font-weight-bolder" style="padding-top: 10px;padding-right: 10px;">
+
+        <label class="form-check-label" for="inlineRadio1">Comments:</label>
+        <!-- <textarea [(ngModel)]="verify.verifycomments" 
+        class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+        </textarea> -->
+        
+          
+          <small style="padding-left:5px; font-size:14px;">{{verify.verifycomments | titlecase}}</small>
+       
+
+      </div>
+
+    </section>
+    <footer id="modal-footer" class="col-12 mb-2 d-flex justify-content-center align-items-center" style="border-top: 1px solid #b1b1b1;">
+      <div class="col m-0 p-0 px-3 mb-2 mt-2">
+        <button type="button" class="btn btn-success btn-sm mx-2"  *ngIf="changepermission == 'yes'"
+        (click)="Reviewupdate()" style="float: left;"> Review/update </button>
+        <!-- <button type="button" class="btn  btn-danger btn-sm mx-2" 
+        (click)="closepopupreject()" style="float: left;">Reject</button> -->
+        <button type="button" class="btn btn-default btn-sm mx-2" id="modal-cancel-button"
+         (click)="closepopup()" style="float: right;">Cancel</button>
+      </div>
+    </footer>
+  </div>
+</div>
+
+
+<div class="popup {{confirm ?'pshow':''}}">
+  <div class="centerbox">
+    <div class="pclose" (click)="closepopup()"><i class="fa fa-times " style="font-size: 20px;"></i></div>
+    <section class="mb-2 mt-2" style=" min-height: 175px;">
+      
+      <div class="col d-flex justify-content-center align-items-center p-0 m-0"
+        style="border-bottom: 1px solid #b1b1b1;">
+        <h5 class="p-0 m-0 mb-2">Review Doctor</h5>
+      </div>
+
+      
+
+      <div class="form-check  font-weight-bolder" style="padding-top: 30px;padding-right: 10px;">
+
+        <label class="form-check-label" for="inlineRadio1">Are you sure want to review  {{verify.doctor_name}}?</label>
+        <!-- <textarea [(ngModel)]="verify.verifycomments" 
+        class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+        </textarea> -->
+        
+          
+       
+
+      </div>
+
+    </section>
+    <footer id="modal-footer" class="col-12 mb-2 d-flex justify-content-center align-items-center" style="border-top: 1px solid #b1b1b1;">
+      <div class="col m-0 p-0 px-3 mb-2 mt-2">
+        <button type="button" class="btn btn-success btn-sm mx-2" 
+        (click)="reviewnow()" style="float: left;"> Yes, Review </button>
+        <!-- <button type="button" class="btn  btn-danger btn-sm mx-2" 
+        (click)="closepopupreject()" style="float: left;">Reject</button> -->
+        <button type="button" class="btn btn-default btn-sm mx-2" id="modal-cancel-button"
+         (click)="closepopup()" style="float: right;">Cancel</button>
+      </div>
+    </footer>
+  </div>
+</div>

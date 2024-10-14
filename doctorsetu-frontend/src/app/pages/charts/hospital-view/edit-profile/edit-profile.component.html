@@ -1,0 +1,297 @@
+<div class="wrapper  m-1 position-relative">
+    <div class="row p-0 m-0 px-2 mb-1">
+      <div class="col-lg-3 col-md-3 col-sm-3 col-12 border rounded d-flex justify-content-start">
+        <input type="file" (change)="handleFileInput($event)"accept="image/x-png,image/jpeg" class="custom-file-input p-1" id="inputGroupFile01"
+        aria-describedby="inputGroupFileAddon01">
+        
+        <label class="custom-file-label" for="inputGroupFile01">Edit Image</label>
+      </div>
+    </div> 
+    <div class="row p-0 m-0 px-2 mb-1">
+      
+      <!-- Profile Pic Part -->
+      <div class="col-lg-3 col-md-3 col-sm-3 col-12  border rounded d-flex justify-content-center align-items-center">
+        <img src="{{image}}" alt="img" style="width: 240px; height: 240px; background-size: contain;">
+      </div>
+      <!-- Profile Pic Part -->
+      <div class="col-lg-9 col-md-9 col-sm-12 col-12">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <p class="col-12 m-0 p-0" style="font-size: 14px; font-weight: 600;">Hospital Name <span class="red-star">*</span></p>
+            <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+              <input type="text" [(ngModel)]="hosp_name" 
+              class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <p class="col-12 m-0 p-0" style="font-size: 14px; font-weight: 600;">Contact Person Name <span class="red-star">*</span></p>
+            <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+              <input type="text" [(ngModel)]="contact_person" 
+              class="form-control m-0" id="exampleInputEmail1" placeholder="Enter Contact Person Name" style="font-size: 12px;">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <p class="col-12 m-0 p-0" style="font-size: 14px; font-weight: 600;">Email Id <span class="red-star">*</span></p>
+            <div class="form-group">
+              <input type="text" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" 
+                     id="exampleInputEmail1" name="email" ngModel #email="ngModel" placeholder="Email" [(ngModel)]="hospital_email" >
+              <div *ngIf="email.errors &&(email.touched || email.dirty)" class="aler alert-danger">
+                <div [hidden]="!email.errors?.pattern">
+                  Invalid Email ID 
+                </div>
+              </div>
+            </div>
+          </div> 
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <p class="col-12 m-0 p-0" style="font-size: 14px; font-weight: 600;">Mobile Number <span class="red-star">*</span></p>
+              <div class="form-group">
+                <input type="text" class="form-control" pattern="[0-9]{10}" 
+                       id="exampleInputEmail1" name="phone" ngModel #phone="ngModel" (keypress)="keyPress($event)" placeholder="Enter Mobile Number" [(ngModel)]="hospital_ph" maxlength=10>
+                <div *ngIf="phone.errors &&(phone.touched || phone.dirty)" class="aler alert-danger">
+                  <div [hidden]="!phone.errors?.pattern">
+                    Invalid Mobile Number 
+                  </div> 
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <p class="col-12 m-0 p-0" style="font-size: 14px; font-weight: 600;">City</p>
+              <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+                <input type="text" [(ngModel)]="city" 
+                class="form-control m-0" id="exampleInputEmail1" placeholder="Enter City" style="font-size: 12px;">
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <p class="col-12 m-0 p-0" style="font-size: 14px; font-weight: 600;">State</p>
+              <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+                <input type="text" [(ngModel)]="state" 
+                class="form-control m-0" id="exampleInputEmail1" placeholder="Enter State"style="font-size: 12px;">
+              </div>
+            </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <p class="col-12 m-0 p-0" style="font-size: 14px; font-weight: 600;">Pin <span class="red-star">*</span>
+            </p>
+            <div class="form-group">
+
+            <!-- <div class="col d-flex justify-content-between align-items-center mb-1 p-0"> -->
+              <input type="text" class="form-control" pattern="[0-9]{6}" 
+                       id="exampleInputEmail1" name="pins" ngModel #pins="ngModel" (keypress)="keyPress($event)" placeholder="Enter Pin" [(ngModel)]="pin">
+                <div *ngIf="pins.errors &&(pins.touched || pins.dirty)" class="aler alert-danger"> 
+                  <div [hidden]="!pins.errors?.pattern"> 
+                    Invalid Pin Code
+                  </div>
+                <!-- </div> -->
+            </div>
+            </div>
+          </div>
+         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <p class="col-12 m-0 p-0" style="font-size: 14px; font-weight: 600;">Location</p>
+            <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+              <!-- <input type="text" [(ngModel)]="location" 
+              class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;"> -->
+              <div class="form-control m-0" id="exampleInputEmail1"> <a (click)="mapview()" style="color: blue; font-size: 12px; ">Edit map </a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mx-2 my-1 d-flex justify-content-center align-items-center" *ngIf="map">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-2 m-0 p-0">
+    
+        <p class="p-0 m-0 px-1 py-2"><a (click)="mapview()" style="color:red;">Close map </a></p>
+        <agm-map [latitude]="lat" [longitude]="lng" style="height: 300px;">
+          <agm-marker [latitude]="lat" [longitude]="lng" [markerDraggable]="true" (dragEnd)="markerDragEnd($event)">
+          </agm-marker>
+        </agm-map>
+        
+      </div>
+    </div>
+    
+    <!-- Top Headder -->
+    <div class="row px-3 m-0 p-0">
+      <p class="col-12  m-0 p-0"  style="font-size: 14px; font-weight: 600;">Address <span class="red-star">*</span></p>
+      <div class="col m-0 p-0">
+        <div class="col p-0">
+          <textarea [(ngModel)]="address" 
+          class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;"></textarea>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row m-0 p-0  mt-2">
+      <div class="col-lg col-md col-sm col-12">
+        <p class="col-12 m-0 p-0" style="font-size: 14px; font-weight: 600;">Registration Number,</p>
+        <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+          <input type="text" [(ngModel)]="registration_number" 
+          class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+        </div>
+      </div>
+      <div class="col-lg col-md col-sm col-12">
+        <p class="col-12 m-0 p-0"  style="font-size: 14px; font-weight: 600;">Affiliations</p>
+        <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+          <input type="text" [(ngModel)]="affiliations" 
+          class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+        </div>
+      </div>
+      
+    </div>
+    <div class="row m-0 p-0">
+      <div class="col-lg-6">
+        <p class="col-12 m-0 p-0"  style="font-size: 14px; font-weight: 600;">Specialities <span class="red-star">*</span></p>
+        <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+          <nb-select [(selected)]="specialisation" 
+          multiple placeholder="Multiple Select" style="width: 100%; max-width:60rem !important; font-size: 12px;">
+            <nb-option *ngFor="let specialization of specializationList" [value]="specialization.name">
+              {{specialization.name | titlecase}}
+            </nb-option>
+          </nb-select>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <p class="col-12 m-0 p-0"  style="font-size: 14px; font-weight: 600;">Symptoms Tags <span class="red-star">*</span></p>
+        <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+          <nb-select [(selected)]="symptoms" 
+          multiple placeholder="Multiple Select" style="width: 100%; max-width:60rem !important; font-size: 12px;">
+            <nb-option *ngFor="let symptom of symptomslist" [value]="symptom.sym_name">
+              {{symptom.sym_name | titlecase}}
+            </nb-option>
+          </nb-select>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <div class="row px-3 m-0 p-0">
+      <p class="col-12  m-0 p-0"  style="font-size: 14px; font-weight: 600;">Short Brief</p>
+      <div class="col m-0 p-0">
+        <div class="col p-0">
+          <textarea [(ngModel)]="about" 
+          class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row px-3 m-0 p-0">
+      <p class="col-12 m-0 p-0"  style="font-size: 14px; font-weight: 600;">Achievements</p>
+      <div class="col p-0">
+        <div class="col p-0 ">
+          <textarea [(ngModel)]="achievements" 
+          class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;"></textarea>
+        </div>
+      </div>
+    </div>
+    
+    <nb-card accent="success" class="mx-2">
+      <!-- <div class="col-12 mb-2 m-0 p-0">
+        <div class="row p-0 m-0 p-2">
+          <div class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+            <p class="col m-0 p-0 mb-1">Contact Person Name</p>
+            <p class="col p-0 m-0 mb-1 text-left">{{contact_person_name}}</p>
+          </div>
+        </div>
+      </div> -->
+      <!-- <div class="col-12 mb-2 m-0 p-0">
+        <div class="row p-0 m-0 p-2">
+          <div
+          class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+          <p class="col m-0 p-0 mb-1">Email ID</p>
+          <p class="col p-0 m-0 mb-1 text-left">{{hospital_email}}</p>
+        </div>
+        <div
+          class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+          <p class="col m-0 p-0 mb-1">Phone Numbers</p>
+          <p class="col p-0 m-0 mb-1 text-left">{{hospital_ph}}</p>
+        </div>
+        </div>
+      </div> -->
+      <!-- <div class="col-12 mb-2 m-0 p-0">
+        <div class="row p-0 m-0 p-2">
+          <div
+          class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+          <p class="col m-0 p-0 mb-1">City</p>
+          <p class="col p-0 m-0 mb-1">Bangalore</p>
+        </div>
+        <div
+          class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+          <p class="col m-0 p-0 mb-1">State</p>
+          <p class="col p-0 m-0 mb-1">Karnataka</p>
+        </div>
+        <div
+          class="p-0 m-0 mb-1 col-lg col-md col-sm col-12 d-flex mx-1 border-bottom rounded">
+          <p class="col  m-0 p-0 mb-1">PIN</p>
+          <p class="col  p-0 m-0 mb-1">500056</p>
+        </div>
+        </div>
+      </div> -->
+      <div class="col-12 col-sm-12 col-md col-lg p-0 m-0 text-right mt-3">
+      <button type="button" class="btn btn-secondary button btn-sm mt-3 mr-1" 
+      mat-raised-button (click)="addconsultblock()">
+      + Add
+    </button>
+  </div>
+  
+      <div class="container">
+        <p class="col-12">Consultation Timings:</p>
+        <div *ngFor="let item of consultationlist | keyvalue" class="mx-2 mb-2">
+
+          <nb-card class="container m-0 ">
+
+              <div class="row" style="font-size: 12px;">
+                  <div class="col-lg-4 col-md-4 col-sm-12 consultblock">
+                      <div *ngFor="let day of days  ">
+                          <div class="days {{ item.value.days.includes(day.fname)?'selected':''}} "
+                              (click)="toggleconsult(day.fname,item.key,'days')">{{day.name}}</div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-12 consultblock">
+                      <input type="time" class="form-control  consultinput" [(ngModel)]="item.value.startTime"
+                          id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="10:00">
+                      <input type="time" class="form-control consultinput" [(ngModel)]="item.value.endTime"
+                          id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="22:00">
+                  </div>
+                  <!-- <div class="col-lg-3 col-md-3 col-sm-12 consultblock">
+                      <div *ngFor="let atype of avaliableMode  ">
+                          <div class="consulttype  {{ item.value.avaliableMode.includes(atype.name)?'selected':''}} "
+                              (click)="toggleconsult(atype.name,item.key,'avaliableMode')"><i
+                                  class=" {{atype.icon}}"></i></div>
+                      </div>
+                  </div> -->
+                  <div class="col-lg-1 col-md-1 col-sm-12 consultblock">
+                      <div class="consulttype material-icons delete" (click)="removeConfigBlock(item.key)">delete
+                      </div>
+                  </div>
+              </div>
+
+
+          </nb-card>
+      </div>
+      </div>
+    </nb-card>
+    
+    <div class="row justify-content-end">
+    
+      <div class="row">
+        <div class="col mt-3 mb-3 mr-4">
+          <button type="submit" class="btn btn-primary btn-sm  float-right"
+           (click)="updatefields()"  *ngIf="id != undefined && add_branch == undefined"style="font-size: 12px;">Update</button>
+          
+           <button type="submit" class="btn btn-primary btn-sm  float-right" 
+           (click)="addbranch()"  *ngIf="add_branch != undefined"style="font-size: 12px;">Add Branch</button>
+         
+           <button type="submit" class="btn btn-primary btn-sm  float-right" 
+           (click)="addhospital()"  *ngIf="add_hospital != undefined"style="font-size: 12px;">Add Hospital</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  

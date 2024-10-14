@@ -1,0 +1,22 @@
+.head{
+    margin-bottom: 15px;
+}
+.button{
+    background-color: #4c4c99 !important;
+    text-shadow: 0.5px 0.5px #4b2323;
+    transition: all 0.5s ease;
+}
+.button:hover{
+    transform: scale(1.1);
+}
+.symptom-head{
+    color: #000;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+.table-top{
+    border-top: 3px solid #4c4c99;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}

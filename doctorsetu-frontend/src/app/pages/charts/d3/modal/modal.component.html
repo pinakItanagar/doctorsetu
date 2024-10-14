@@ -1,0 +1,25 @@
+<div id="modal-content-wrapper">
+    <header id="modal-header">
+        <h1 id="modal-title">Add Hospital</h1>
+    </header>
+    <section id="modal-body">
+        <form action="">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="Sizing example input" 
+                aria-describedby="inputGroup-sizing-default" placeholder="Hospital Name">
+              </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label" for="inputGroupFile01">select file</label>
+            </div>
+        </form>
+    </section>
+    <footer id="modal-footer">
+        <button  id="modal-action-button" class="btn btn-md hos-action-button" type="button" (click)="actionFunction()">
+            Submit
+        </button>
+        <button class="btn btn-md hos-cancel-button" type="button"  id="modal-cancel-button" (click)="closeModal()">
+            Cancel
+        </button>
+    </footer>
+</div>

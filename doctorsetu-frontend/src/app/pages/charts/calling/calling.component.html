@@ -1,0 +1,65 @@
+<div class="col-12 mb-2 m-0 p-0">
+  <div [id]="localCallId" class="local"> 
+    Call on going.
+  </div>
+<div style="padding-left: 105px;padding-top: 10px;">Please wait for Patient to join call.</div>
+
+<div *ngFor="let callId of remoteCalls" [id]="callId" class="remote">
+  <!-- <div id="screen-share-btn-container" class="col-2 float-right text-right mt-2">
+    <button id="screen-share-btn" type="button" class="btn btn-lg">
+      <i id="screen-share-icon" class="fas fa-share-square"></i>
+    </button>
+  </div> -->
+  <div id="buttons-container" class="row justify-content-center mt-3">
+    <div class="col-md-2 text-center" >
+      <button  type="mic-btn" [disabled]="sharescreenbtn" (click)="sharescreen()"class="btn btn-block btn-primary btn-lg">
+      <i id="mic-icon" class="fas fa-desktop"></i>
+
+      </button>
+    </div>
+    <div class="col-md-2 text-center">
+      <button id="mic-btn" type="button"  (click)="muteAudio()"class="btn btn-block btn-dark btn-lg">
+        <i id="mic-icon" class="fas fa-microphone"></i>
+      </button>
+    </div>
+    <div class="col-md-2 text-center" *ngIf="activatedRoute.snapshot.queryParams.type =='video'">
+      <button id="video-btn" type="button"  (click)="muteVideo()" class="btn btn-block btn-dark btn-lg">
+        <i id="video-icon" class="fas fa-video"></i>
+      </button>
+    </div>
+    <div class="col-md-2 text-center">
+      <button id="exit-btn" type="button" (click)="cutcall()" class="btn btn-block btn-danger btn-lg">
+        <i id="exit-icon" class="fas fa-phone-slash"></i>
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="popup {{callstatus ?'pshow':''}}">
+  <div class="centerbox">
+    <div class="pclose" (click)="leavechannel()"><i class="fa fa-times " style="font-size: 20px;"></i></div>
+    <section class="mx-2 mb-2 mt-2">
+      <div class="col d-flex justify-content-center align-items-center p-0 m-0">
+        <h5 class="p-0 m-0 mb-2">Alert</h5>
+      </div>
+
+      <span style="padding-left: 1px;">Did the consultation happen?If YES, a default appointment will be created for further processing. if NO, not further actions.</span> 
+    </section>
+    <footer id="modal-footer" class="col-12 mb-2 d-flex justify-content-center align-items-center">
+     
+      <div class="col m-0 p-0 px-3">
+
+        <button type="button" class="btn btn-sm " (click)="createconsultation()" id="modal-action-button">
+          Yes
+        </button>
+        <button type="button" class="btn btn-sm button_cancel" id="modal-cancel-button" (click)="leavechannel()" >
+          No
+        </button>
+        
+      </div>
+
+      
+    </footer>
+  </div>
+</div>

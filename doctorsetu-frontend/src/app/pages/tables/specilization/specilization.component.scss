@@ -1,0 +1,362 @@
+.search_fileld{
+    width: 25%;
+    display: block;
+    transition: all 0.5s ease;
+    width: 100%;
+    margin: 0;
+    color: #a9a9a9;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+.table-view{
+    border-top: 2px solid #fdf5f5;
+    border-bottom: 2px solid #fdf5f5;
+    width: 100%;
+}
+.table-head{
+    background-color: #ababab14;
+}
+.table-view th{
+    font-size: 13px !important;
+    color: #1f1919;
+    border-left: 1px solid #eee;
+    padding: 6px 5px !important;
+    vertical-align: middle;
+}
+.table-view td{
+    font-size: 12px !important;
+    color: #1f1919;
+    border-left: 1px solid #eee;
+    padding: 5px 10px;
+    vertical-align: middle;
+}
+tr.mat-row, tr.mat-footer-row, tr.mat-header-row {
+    height: unset;
+    border: 1px solid #eee;
+}
+.btn-search{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-size: 12px;
+}
+.symptom-head{
+    color: #000;
+    font-size: 22px;
+    font-weight: 600;
+}
+.head{
+    margin-bottom: 15px;
+}
+.button{
+    background-color: rgb(76, 76, 153) !important;
+    text-shadow: 0.5px 0.5px #4b2323;
+    transition: all 0.5s ease;
+    font-size: 12px;
+}
+.button:hover{
+    transform: scale(1.1);
+}
+.table-top{
+    border-top: 3px solid rgb(76, 76, 153);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 0 20px;
+}
+.main {
+    float: right;
+    margin-top: 12px;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+.show{
+    display: block;
+}
+.hide{
+display: none;
+}
+.edit{
+    cursor: pointer;
+}
+
+#custom-search-input {
+    margin:0;
+    margin-top: 0px;
+    padding: 0;
+}
+
+#custom-search-input .search-query {
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+    margin-bottom: 10;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#custom-search-input button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -28px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    // color:#D9230F;
+}
+
+.search-query:focus + button {
+    z-index: 3;   
+}
+.box-view{
+    border-top: 3px solid #684892;
+  }
+
+  #modal-footer {
+    justify-self: right;
+    align-self: center;
+    float: right;
+}
+
+.button_action {
+    margin-right: 30px;
+    background-color:#36be3d;
+    color: white;
+    padding: 6px;
+}
+
+.button_cancel {
+    background-color: #635f5f;
+    color: white;
+    padding: 6px;
+}
+
+@media only screen and (max-width: 600px) {
+    .table-scroll {
+      overflow-x: scroll;
+    }
+    .symptom-head{
+        font-size: 14px;
+    }
+    .table-head{
+        font-size: 14px !important;
+        font-weight: 300;
+        text-align: left;
+        padding: 0px 5px;
+    }
+    .button{
+        font-size: 12px;
+    }
+  }
+  .red-star {
+    color: red;
+  }
+  .selected{
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+    }
+    .popup{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #00000063;
+    display: none;
+    z-index: 9999;
+    // margin-top: 10px;
+    }
+    .centerbox{
+    background: #fff;
+    width: 450px;
+    min-height: 250px;
+    margin: auto;
+    border-radius: 5px;
+    }
+    .pshow{
+    display:flex;
+    }
+    .pclose{
+    float: right;
+    margin-top: -12px;
+    margin-right: -12px;
+    background: #000;
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 26px;
+    cursor: pointer;
+    border-radius: 3px;
+    }
+    
+    #modal-footer {
+    text-align: center;
+    align-self: center;
+    margin-top: 10px;
+    }
+    
+    #modal-action-button {
+    margin-right: 20px;
+    background-color:#75c448;
+    color: white;
+    }
+    
+    #modal-cancel-button {
+    background-color: #7c7a7a;
+    color: white;
+    }
+    .show{
+    display: block;
+    }
+    .hide{
+    display: none;
+    }
+    
+    .centerboxedit{
+    width: 90%;
+      height: 90%;
+      margin: auto;
+      background: #edf1f7;
+      border-radius: 5px;
+    
+    }
+    .centerboxview{
+    width: 100%;
+    height: calc(100% - 20px);
+    margin: auto;
+    overflow: scroll;
+    overflow-x: hidden;
+    margin-top: 15px;
+    scrollbar-width: thin;
+    }
+    .pcloseedit{
+    float: right;
+    margin-top: -12px;
+    margin-right: -12px;
+    background: #000;
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 26px;
+    cursor: pointer;
+    border-radius: 3px;
+    z-index: 5;
+    }
+    ::-webkit-scrollbar {
+    width: 5px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+    background: rgb(107, 107, 107); 
+    border-radius: 10px;
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+    background: #505050; 
+    }
+    .days {
+    width: 40px;
+    height: 25px;
+    background-color: #efefef;
+    color: #888;
+    border-radius: 4px;
+    margin: 5px 2px;
+    line-height: 25px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+    text-transform: capitalize;
+    cursor: pointer;
+    }
+    .consultblock {
+    display: inline-flex;
+    }
+    .consultinput {
+    width: 100px;
+    height: 25px;
+    background-color: #efefef;
+    color: #888;
+    border-radius: 4px;
+    margin: 5px 2px;
+    line-height: 25px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+    }
+    .consulttype {
+    width: 40px;
+    height: 25px;
+    background-color: #efefef;
+    color: #888;
+    border-radius: 4px;
+    margin: 5px 2px;
+    line-height: 25px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 17px;
+    cursor: pointer;
+    }
+    .selected {
+    background-color: #28a745;
+    color: #fff;
+    }
+    .local {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    width: 20vw;
+    height: 20vh;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+    }
+    
+    .remote {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999999;
+    }

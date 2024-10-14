@@ -1,0 +1,164 @@
+<div class="wrapper fixed">
+  <div class="login_form ">
+    <div class="d-flex p-0 flex-direction-column w-100 justyfy-content-beteen align-items-center bg_img p-0">
+      <div class="col-12 col-lg-6 offset-lg-5 col-md-4 offset-md-5 col-sm-12  p-0">
+        <div class="col text-center mb-2" style="text-shadow: 1px 1px #adabab;">
+          <img src="../../../assets/images/logo.png" alt="" />
+          <h2 style="color: #A6CE37; text-shadow: 1px 1px #adabab; font-size: 28px;">DOCTOR <span style="color:#275b92; font-size: 28px;">SETU</span></h2>
+        </div>
+        <form>
+          <div class="input-group mb-1 px-1">
+            <input type="email" placeholder="Email ID/ Mobile Number" [(ngModel)]="email" name="from" max="{{max}}" 
+            class="form-control inthight" id="inlineFormInputGroupUsername2" value="Email" autocomplete="off">
+          </div>
+          <div class="input-group mb-1 px-1">
+            <input type="password" placeholder="Password/OTP" [(ngModel)]="password" name="to" max="{{max}}"
+              class="form-control inthight" id="inlineFormInputGroupUsername2" aria-valuenow="Password" autocomplete="off">
+          </div>
+          <!-- <select [(ngModel)]="logintype" class="custom-select py-2" id="inputGroupSelect01">
+          <option [selected]>Choose your login Type</option>
+
+          <option *ngFor="let operator of operators; index as i" [selected]="Admin" [ngValue]="operator">
+            {{operator}}
+          </option>
+        </select> -->
+          <div class="input-group mb-1 px-1">
+            <select class="custom-select inthight" id="inputGroupSelect01" [(ngModel)]="loginType" placeholder="Select login Type"  name="something">
+              <option value="admin"> Admin </option>
+              <option value="doctor" selected> Doctor </option>
+              <option value="verifiedauthority"> Verifying Authority </option>
+              <option value="madicalauthority"> Medical Authority </option>
+              <option value="hospitaladmin"> Hospital Admin</option> 
+              <option value="branchadmin"> Branch Admin</option> 
+
+            </select>
+
+          </div>
+
+
+          
+
+          <div class=" col-12 mt-2 text-center">
+            <span style="color:#29d85e; float: right; cursor: pointer;" (click)="sendotp()"  *ngIf="otpsend">Send OTP</span>
+            <span style="color:#29d85e; float: right; cursor: pointer;" (click)="resendotp()"  *ngIf="!otpsend">Resend OTP</span>
+
+            <button type="submit" (click)="login()" class="btn btn-sm btn-primary mb-2">Login</button>
+          </div>
+        </form>
+
+      </div>
+      
+      <p class="text-right copywright" style="font-size: 10px;">© Copyright 2020. <a href="">Preksh</a>  and <a href="">Techinfy</a>.</p>
+    </div>
+  </div>
+</div>
+
+<div class="popup {{callstatus ?'pshow':''}}">
+  <div class="centerbox">
+    <div class="pclose" ><i class="fa fa-times " (click)="closealert()" style="font-size: 20px;"></i></div>
+    <section class="mx-2 mb-2 mt-2">
+      <div class="col d-flex justify-content-center align-items-center p-0 m-0">
+        <h5 class="p-0 m-0 mb-2">Alert</h5>
+      </div>
+      <div class="col text-left px-3 mb-1 p-0 m-0">
+        <p class="p-0 m-0 mb-2" ><strong></strong> <span style="padding-left: 100px;"> Please select login type.</span></p>
+        
+      </div>
+    </section>
+    <footer id="modal-footer" style="padding-top: 100px;" class="col-12 mb-2 d-flex justify-content-center align-items-center">
+     
+      <div class="col m-0 p-0 px-3" >
+
+        <button type="button" class="btn btn-sm "  (click)="closealert()" id="modal-action-button">
+          OK
+        </button>
+        <!-- <button type="button" class="btn btn-sm" id="modal-cancel-button" (click)="dontjoinagaoracall()">
+          Cancel
+        </button> -->
+      </div>
+
+      
+    </footer>
+  </div>
+</div>
+
+<div class="popup {{callstatustwo ?'pshow':''}}">
+  <div class="centerbox">
+    <div class="pclose" ><i class="fa fa-times " (click)="closealert()" style="font-size: 20px;"></i></div>
+    <section class="mx-2 mb-2 mt-2">
+      <div class="col d-flex justify-content-center align-items-center p-0 m-0">
+        <h5 class="p-0 m-0 mb-2">Alert</h5>
+      </div>
+      <div class="col text-left px-3 mb-1 p-0 m-0">
+        <p class="p-0 m-0 mb-2" ><strong></strong> <span style="padding-left: 5px;"> Please Enter Valid Credentials and Type to Login.</span></p>
+        
+      </div>
+    </section>
+    <footer id="modal-footer" style="padding-top: 100px;" class="col-12 mb-2 d-flex justify-content-center align-items-center">
+     
+      <div class="col m-0 p-0 px-3" >
+
+        <button type="button" class="btn btn-sm "  (click)="closealert()" id="modal-action-button">
+          OK
+        </button>
+        
+      </div>
+
+      
+    </footer>
+  </div>
+</div>
+
+<div class="popup {{invalidnum ?'pshow':''}}">
+  <div class="centerbox">
+    <div class="pclose" ><i class="fa fa-times " (click)="closealert()" style="font-size: 20px;"></i></div>
+    <section class="mx-2 mb-2 mt-2">
+      <div class="col d-flex justify-content-center align-items-center p-0 m-0">
+        <h5 class="p-0 m-0 mb-2">Alert</h5>
+      </div>
+      <div class="col text-left px-3 mb-1 p-0 m-0">
+        <p class="p-0 m-0 mb-2" ><strong></strong> <span style="padding-left: 5px;"> Please  Enter Valid Credentials and Type to Login. </span></p>
+        
+      </div>
+    </section>
+    <footer id="modal-footer" style="padding-top: 100px;" class="col-12 mb-2 d-flex justify-content-center align-items-center">
+     
+      <div class="col m-0 p-0 px-3" >
+
+        <button type="button" class="btn btn-sm "  (click)="closealert()" id="modal-action-button">
+          OK
+        </button>
+        
+      </div>
+
+      
+    </footer>
+  </div>
+</div>
+
+<div class="popup {{validnum ?'pshow':''}}">
+  <div class="centerboxNew">
+    <div class="pclose" ><i class="fa fa-times " (click)="closealert()" style="font-size: 20px;"></i></div>
+    <section class="mx-2 mb-2 mt-2">
+      <div class="col d-flex justify-content-center align-items-center p-0 m-0">
+        <h5 class="p-0 m-0 mb-2">Alert</h5>
+      </div>
+      <div class="col text-left px-3 mb-1 p-0 m-0">
+        <p class="p-0 m-0 mb-2" ><strong></strong> <span style="padding-left: 5px;"> OTP sent to Your {{emailnum}}</span></p>
+        
+      </div>
+    </section>
+    <footer id="modal-footer" style="padding-top: 20px;" class="col-12 mb-2 d-flex justify-content-center align-items-center">
+     
+      <div class="col m-0 p-0 px-3" >
+
+        <button type="button" class="btn btn-sm "  (click)="closealert()" id="modal-action-button">
+          OK
+        </button>
+        
+      </div>
+
+      
+    </footer>
+  </div>
+</div>

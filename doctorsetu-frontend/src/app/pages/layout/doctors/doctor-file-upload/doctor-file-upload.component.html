@@ -1,0 +1,223 @@
+<div class="wrapper m-1 position-relative">
+    <div class="row m-0 p-0 px-1">
+
+        <p class="col-12 mx-1 m-0 p-0" style="font-size: 14px; font-weight: 600;">Upload Documents:</p><br />
+        <!-- <nb-card class="col-12 mb-2">
+            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+            <label class="custom-file-label" for="inputGroupFile01">MBBS Cetificates</label>
+        </nb-card> -->
+        <!-- <div class="row m-0 p-0">
+            <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+              <input type="Text" class="col-6 mb-2" class="form-control" placeholder="Certificate Name" >
+    
+            </div>
+            <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label" for="inputGroupFile01">Upload File</label>
+        
+            </div>
+          </div> -->
+          <div class="col-12 px-1 m-0 p-0">
+          <div class="row m-0 p-0">
+            <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1" style="font-size: 12px;">
+              <input type="Text" [(ngModel)]="fileOneName"class="col-6 mb-2" 
+              class="form-control" placeholder="Certificate Name" style="font-size: 12px;" >
+    
+            </div>
+            
+            <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1" style="font-size: 12px;">
+             <input type="file" accept="image/x-png,image/pdf,image/jpeg" 
+             (change)="onSelectFile($event)" class="custom-file-input" 
+             id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" style="font-size: 12px;">
+                <label class="custom-file-label" 
+                for="inputGroupFile01" style="font-size: 12px;">{{filedoconename.substring(filedoconename.length-38, filedoconename.length)}}</label>
+        
+            </div>
+            <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+                <button type="submit"  class="btn btn-danger  float-left" 
+            (click)="removeone()" style="font-size: 12px;">Delete</button>
+            </div>
+            
+          </div>
+          <div class="row m-0 p-0" style="color : blue;" *ngIf="fileOneName" style="font-size: 12px;">
+            <a (click)="goToLink(url1, image1)">--->{{fileOneName}}</a></div>
+          
+          </div>
+    
+          <div class="col-12 mx-1 m-0 p-0" style="padding-top: 20px! important;">
+            <div class="row m-0 p-0">
+              <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+                <input type="Text" [(ngModel)]="fileTwoName"class="col-6 mb-2" 
+                class="form-control" placeholder="Certificate Name" style="font-size: 12px;">
+      
+              </div>
+              <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+                  <input type="file" accept="image/x-png,image/jpeg,image/pdf" 
+                  (change)="onSelectFiletwo($event)" class="custom-file-input" 
+                  id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" style="font-size: 12px;">
+                  <label class="custom-file-label" 
+                  for="inputGroupFile01" style="font-size: 12px;">{{filedoctwoname.substring(filedoctwoname.length-38, filedoctwoname.length)}}</label>
+          
+              </div>
+              <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+                <button type="submit"  class="btn btn-danger  float-left" 
+            (click)="removetwo()" style="font-size: 12px;">Delete</button>
+            </div>
+            </div>
+            <div class="row m-0 p-0" style="color: blue;" *ngIf="fileTwoName" style="font-size: 12px;"><a (click)="goToLink(url2, image2)">-->{{fileTwoName}}</a></div>
+    
+            </div>
+    
+            
+    
+            <div class="col-12 mx-1 m-0 p-0" style="padding-top: 20px! important;">
+                <div class="row m-0 p-0">
+                  <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+                    <input type="Text" [(ngModel)]="fileThreeName"
+                    class="col-6 mb-2" class="form-control" placeholder="Certificate Name" style="font-size: 12px;">
+          
+                  </div>
+                  <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+                      <input type="file" accept="image/x-png,image/jpeg,image/pdf" 
+                      (change)="onSelectFilethree($event)"class="custom-file-input" 
+                      id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" style="font-size: 12px;">
+                      <label class="custom-file-label" for="inputGroupFile01" style="font-size: 12px;">{{filedocthreename.substring(filedocthreename.length-38, filedocthreename.length)}}</label>
+              
+                  </div>
+                  <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+                    <button type="submit"  class="btn btn-danger  float-left" 
+                (click)="removethree()" style="font-size: 12px;">Delete</button>
+                </div>
+                </div>
+                <div class="row m-0 p-0" style="color: blue;" *ngIf="fileThreeName" style="font-size: 12px;"><a (click)="goToLink(url3, image3)">-->{{fileThreeName}}</a></div>
+    
+                </div>
+    
+                <div class="col-12 mx-1 m-0 p-0" style="padding-top: 20px! important;">
+    
+    
+                    <div class="row m-0 p-0">
+                      <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+                        <input type="Text" [(ngModel)]="fileFourName" 
+                        class="col-6 mb-2" class="form-control" placeholder="Certificate Name" style="font-size: 12px;">
+              
+                      </div>
+                      <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+                          <input type="file" accept="image/x-png,image/jpeg,image/pdf" 
+                          (change)="onSelectFilefour($event)"class="custom-file-input" 
+                          id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                          <label class="custom-file-label" for="inputGroupFile01" style="font-size: 12px;">{{filedocfourname.substring(filedocfourname.length-38, filedocfourname.length)}}</label>
+                  
+                      </div>
+                      <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+                        <button type="submit"  class="btn btn-danger  float-left" 
+                    (click)="removefour()" style="font-size: 12px;">Delete</button>
+                    </div>
+                    </div>
+                    <div class="row m-0 p-0" style="color: blue;" *ngIf="fileFourName" style="font-size: 12px;"><a (click)="goToLink(url4, image4)">-->{{fileFourName}}</a></div>
+    
+                    </div>
+    
+                    <div class="col-12 mx-1 m-0 p-0" style="padding-top: 20px! important;">
+                        <div class="row m-0 p-0">
+                          <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+                            <input type="Text" [(ngModel)]="fileFiveName"
+                            class="col-6 mb-2" class="form-control" placeholder="Certificate Name" style="font-size: 12px;">
+                  
+                          </div>
+                          <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+                              <input type="file" accept="image/x-png,image/jpeg,image/pdf" 
+                              (change)="onSelectFilefive($event)" class="custom-file-input" 
+                              id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" style="font-size: 12px;">
+                              <label class="custom-file-label" for="inputGroupFile01" style="font-size: 12px;">{{filedocfivename.substring(filedocfivename.length-38, filedocfivename.length)}}</label>
+                      
+                          </div>
+                          <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+                            <button type="submit"  class="btn btn-danger  float-left" 
+                        (click)="removefive()" style="font-size: 12px;">Delete</button>
+                        </div>
+                        </div>
+                        <div class="row m-0 p-0" style="color: blue;" *ngIf="fileFiveName" style="font-size: 12px;"><a (click)="goToLink(url5, image5)">-->{{fileFiveName}}</a></div>
+    
+                        </div>
+    
+                    <div class="row m-0 p-0" style="padding-top: 20px! important;">
+                        <div class="col mt-2 mb-3 mr-3">
+                          <button type="submit"  class="btn btn-primary btn-sm float-right" 
+                          (click)="upload()" style="font-size: 12px;">Update</button>
+                        </div>
+                      </div>
+       
+        
+    <!-- =======
+        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+            <nb-card class="col-12 mb-2">
+                <nb-card-header class="mt-2 mb-1">
+                    MBBS Cetificates
+                </nb-card-header>
+            </nb-card>
+        </div>
+       <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+        <nb-card class="col-12 mb-2">
+            <nb-card-body>
+                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label mt-3" for="inputGroupFile01">File Upload</label>
+            </nb-card-body>
+        </nb-card>
+       </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+            <nb-card class="col-12 mb-2">
+                <nb-card-header class="mt-2 mb-1">
+                    PG Cetificates
+                </nb-card-header>
+            </nb-card>
+        </div>
+       <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+        <nb-card class="col-12 mb-2">
+            <nb-card-body>
+                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label mt-3" for="inputGroupFile01">File Upload</label>
+            </nb-card-body>
+        </nb-card>
+       </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+            <nb-card class="col-12 mb-2">
+                <nb-card-header class="mt-2 mb-1">
+                    Ph.D Cetificates
+                </nb-card-header>
+            </nb-card>
+        </div>
+       <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+        <nb-card class="col-12 mb-2">
+            <nb-card-body>
+                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label mt-3" for="inputGroupFile01">File Upload</label>
+            </nb-card-body>
+        </nb-card>
+       </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+            <nb-card class="col-12 mb-2">
+                <nb-card-header class="mt-2 mb-1">
+                    MC India Cetificates
+                </nb-card-header>
+            </nb-card>
+        </div>
+       <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+        <nb-card class="col-12 mb-2">
+            <nb-card-body>
+                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label mt-3" for="inputGroupFile01">File Upload</label>
+            </nb-card-body>
+        </nb-card>
+       </div> -->
+    
+    </div>
+</div>
+
+

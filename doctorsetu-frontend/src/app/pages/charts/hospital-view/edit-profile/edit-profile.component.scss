@@ -1,0 +1,168 @@
+.symptom-head{
+  color: #000;
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+.head{
+  margin-bottom: 15px;
+}
+.days{
+  width: 40px;
+  height: 25px;
+  background-color: #efefef;
+  color: #888;
+  border-radius: 4px;
+  margin: 5px 2px;
+  line-height: 25px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 13px;
+  text-transform:capitalize;
+  cursor: pointer;
+}
+.consultblock{
+  display: inline-flex;
+}
+.consultinput{
+  width: 100px;
+  height: 25px;
+  background-color: #efefef;
+  color: #888;
+  border-radius: 4px;
+  margin: 5px 2px;
+  line-height: 25px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 13px;
+}
+.popup{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #00000063;
+  display: none;
+  z-index: 9999;
+}
+.consulttype{
+  width: 40px;
+  height: 25px;
+  background-color: #efefef;
+  color: #888;
+  border-radius: 4px;
+  margin: 5px 2px;
+  line-height: 25px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 17px;
+  cursor: pointer;
+}
+.agm-map {
+  height: 300px !important;
+  width: 100%;  /* This is really important*/
+}
+.selected{
+  background-color: #28a745;
+  color: #fff;
+}
+.popup{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #00000063;
+  display: none;
+  z-index: 9999;
+}
+
+.centerbox{
+  background: #fff;
+  width: 450px;
+  min-height: 250px;
+  margin: auto;
+  border-radius: 5px;
+}
+.pshow{
+  display:flex;
+}
+.pclose{
+  float: right;
+  margin-top: -12px;
+  margin-right: -12px;
+  background: #000;
+  color: #fff;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 26px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.disable{
+  background-color: #5c5f5c;
+  color: #fff;
+}
+.delete{
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+.nb-theme-default nb-toggle.status-basic .toggle {
+  background-color: #b3a5a5 !important;
+  border-color: #efefef;
+}
+.nb-theme-default nb-toggle.status-basic .native-input:enabled + .toggle {
+  background-color: #b3a5a5 !important;
+  border-color: #3366ff;
+}
+
+.table-view{
+  border-top: 2px solid #fdf5f5;
+  border-bottom: 2px solid #fdf5f5;
+}
+
+.show{
+  display: block;
+}
+.hide{
+display: none;
+}
+.edit{
+  cursor: pointer;
+}
+// .box-view{
+//     border: 2px solid #684892;
+//   }
+
+#modal-footer {
+  justify-self: right;
+  align-self: center;
+  float: right;
+}
+
+.button_action {
+  margin-right: 30px;
+  background-color:#36be3d;
+  color: white;
+  padding: 6px;
+}
+
+.button_cancel {
+  background-color: #635f5f;
+  color: white;
+  padding: 6px;
+}
+.agm-map {
+  height: 300px !important;
+  width: 100%;  /* This is really important*/
+}
+.red-star {
+  color: red;
+}

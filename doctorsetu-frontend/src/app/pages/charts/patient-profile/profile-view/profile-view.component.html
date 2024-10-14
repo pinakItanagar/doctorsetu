@@ -1,0 +1,172 @@
+<div class="row m-0 p-0">
+  <div class="col-12 col-lg col-md col-sm mb-1 mt-1 m-0 p-0 mx-1">
+    <p class="m-0 p-0" 
+    style="color: #6b6a6a; font-size: 14px; font-weight: 600;">Nick Name</p>
+    <div class="border-bottom rounded mb-1 m-0 p-0">
+      <p class="p-0 m-0 px-1" style="font-size: 12px;">{{nickname}}</p>
+    </div>
+  </div>
+  <div class="col-12 col-lg col-md col-sm mb-1 mt-1 m-0 p-0 mx-1">
+    <p class="m-0 p-0" 
+    style="color: #6b6a6a; font-size: 14px; font-weight: 600;">Gender</p>
+    <div class="border-bottom rounded mb-1 m-0 p-0">
+      <p class="p-0 m-0 px-1" style="font-size: 12px;">{{patient_gender | titlecase}}</p>
+    </div>
+  </div>
+  <div class="col-12 col-lg col-md col-sm mb-1 mt-1 m-0 p-0 mx-1">
+    <p class="m-0 p-0" 
+    style="color: #6b6a6a; font-size: 14px; font-weight: 600;">Relationship with Self</p>
+    <div class="border-bottom rounded mb-1 m-0 p-0">
+      <p class="p-0 m-0 px-1 " style="font-size: 12px;">{{member_relationship}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="row m-0 p-0 border rounded mb-2">
+  <div class="col-lg-4 col-md-4 col-sm-4 col-12 mb-2  m-0 p-0" style=" height: 321px;">
+    <img src="{{profileimg}}" alt="img" style="width: 100%; height: 100%; background-size: contain;" >
+  </div>
+  <div class="col-lg-8 col-md-8 col-sm-8 col-12 px-2 mb-2 m-0 small-screen">
+    <div class="m-0 p-0 mb-1">
+      
+      <div class="col p-2 m-0 d-flex justify-content-start align-items-center "
+      style="color: #6b6a6a; font-size: 14px; font-weight: 600;">
+        <p class="col-4 m-0 p-0 text-left">Name</p>
+        <p class="col-8 m-0 p-0 text-left"><strong>{{patient_name}}</strong></p>
+      </div>
+    </div>
+    <div class="m-0 p-0 mb-1">
+      
+      <div class="col p-2 m-0 d-flex justify-content-start align-items-center"
+      style="color: #6b6a6a; font-size: 14px; font-weight: 600;">
+        <p class="col-4 m-0 p-0 text-left">Address</p>
+        <p class="col-8 m-0 p-0 text-left">{{address}}</p>
+      </div>
+    </div>
+    <div class="m-0 p-0 mb-1">
+      <div class="col p-2 m-0 d-flex justify-content-start align-items-center"
+      style="color: #6b6a6a; font-size: 14px; font-weight: 600;">
+        <p class="col-4 m-0 p-0 text-left">City</p>
+        <p class="col-8 m-0 p-0 text-left">{{city}}</p>
+      </div>
+    </div>
+    <div class="m-0 p-0 mb-1">
+      
+      <div class="col p-2 m-0 d-flex justify-content-start align-items-center"
+      style="color: #6b6a6a; font-size: 14px; font-weight: 600;">
+        <p class="col-4 m-0 p-0 text-left">State</p>
+        <p class="col-8 m-0 p-0 text-left">{{state}}</p>
+      </div>
+    </div>
+    <div class="m-0 p-0 mb-1">
+      
+      <div class="col p-2 m-0 d-flex justify-content-start align-items-center"
+      style="color: #6b6a6a; font-size: 14px; font-weight: 600;">
+        <p class="col-4 m-0 p-0 text-left">Pin code</p>
+        <p class="col-8 m-0 p-0 text-left">{{pin}}</p>
+      </div>
+    </div>
+    <div class="m-0 p-0 mb-1">
+      
+      <div class="col p-2 m-0 d-flex justify-content-start align-items-center"
+      style="color: #6b6a6a; font-size: 14px; font-weight: 600;">
+        <p class="col-4 m-0 p-0 text-left">Date of Birth</p>
+        <p class="col-8 m-0 p-0 text-left">{{dob}}</p>
+      </div>
+    </div>
+    <div class="m-0 p-0 mb-1">
+      
+      <div class="col p-2 m-0 d-flex justify-content-start align-items-center"
+      style="color: #6b6a6a; font-size: 14px; font-weight: 600;">
+        <p class="col-4 m-0 p-0 text-left">Gender</p>
+        <p class="col-8 m-0 p-0 text-left">{{patient_gender | titlecase}}</p>
+      </div>
+    </div>
+    <div class="m-0 p-0 mb-1">
+      
+      <div class="col p-2 m-0 d-flex justify-content-start align-items-center"
+      style="color: #6b6a6a; font-size: 14px; font-weight: 600;">
+        <p class="col-4 m-0 p-0 text-left">Mobile No</p>
+        <p class="col-8 m-0 p-0 text-left">+91- {{phnumber}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row m-0 p-0">
+  <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1"
+  style="color: #6b6a6a; font-size: 14px; font-weight: 600;">
+    <p class="m-0 p-0 mb-1 text-left">Aadhaar No</p>
+    <div class="p-0 m-0 mb-1 border-bottom rounded">
+      <p class="p-0 m-0 px-1 py-1">9908908855</p>
+    </div>
+  </div>
+  <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1"
+  style="color: #6b6a6a; font-size: 14px; font-weight: 600;">
+    <p class="m-0 p-0 mb-1 text-left">Email Id</p>
+    <div class="p-0 m-0 mb-1 border-bottom rounded">
+      <p class="p-0 m-0 px-1 py-1">{{email}}</p>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row m-0 p-0">
+  <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+    <p class="m-0 p-0 mb-1 text-left">Date of Birth</p>
+    <nb-card class="p-0 m-0 mb-1">
+      <p class="p-0 m-0 px-1 py-2">19/09/1985</p>
+    </nb-card>
+  </div>
+  <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+    <p class="m-0 p-0 mb-1 text-left">Gender</p>
+    <nb-card class="p-0 m-0 mb-1">
+      <p class="p-0 m-0 px-1 py-2">Male</p>
+    </nb-card>
+  </div>
+</div> -->
+
+<div class="row m-0 p-0">
+  <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1"
+  style="color: #6b6a6a; font-size: 14px; font-weight: 600;">
+    <p class="m-0 p-0 mb-1 text-left">Height</p>
+    <div class="p-0 m-0 mb-1 border-bottom rounded">
+      <p class="p-0 m-0 px-1 py-1">{{height}}cm</p>
+    </div>
+  </div>
+  <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1"
+  style="color: #6b6a6a; font-size: 14px; font-weight: 600;">
+    <p class="m-0 p-0 mb-1 text-left">Weight</p>
+    <div class="p-0 m-0 mb-1 border-bottom rounded">
+      <p class="p-0 m-0 px-1 py-1">{{weight}} Kgs</p>
+    </div>
+  </div>
+  <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1"
+  style="color: #6b6a6a; font-size: 14px; font-weight: 600;">
+    <p class="m-0 p-0 mb-1 text-left">Blood Group</p>
+    <div class="p-0 m-0 mb-1 border-bottom rounded">
+      <p class="p-0 m-0 px-1 py-1">{{blood_group}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="row m-0 p-0">
+  <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1"
+  style="color: #6b6a6a; font-size: 14px; font-weight: 600;">
+    <p class="m-0 p-0 mb-1 text-left">Pre-existing Illness</p>
+    <div class="p-0 m-0 mb-1 border-bottom rounded">
+      <p class="p-0 m-0 px-1 py-1">{{patient_predisease}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="row m-0 p-0">
+  <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1"
+  style="color: #6b6a6a; font-size: 14px; font-weight: 600;">
+    <p class="m-0 p-0 mb-1 text-left">Alergic to</p>
+    <div class="p-0 m-0 mb-1 border-bottom rounded">
+      <p class="p-0 m-0 px-1 py-1">{{patient_allergicto}}</p>
+    </div>
+  </div>
+</div>
+
+

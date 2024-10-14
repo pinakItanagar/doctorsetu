@@ -1,0 +1,173 @@
+<!-- Specilazation View -->
+<div class="wrapper  m-1 position-relative">
+    <div size="" accent="info" class="bg-none mx-1">
+      <!-- Header -->
+      <div class="d-flex flex-direction-row justify-content-between w-100 align-items-center head">
+        <div class="symptom-head">
+          <span>Verification Check List</span>
+        </div>
+        <button type="button" class="btn btn-primary button btn-sm" mat-raised-button (click)="showhidebox()"
+          [ngClass]="status ? 'hide' : 'show'">
+          + Add New
+        </button>
+      </div>
+      <!-- Header -->
+      <!-- Add Fade in -->
+      <div class="p-1 bg-white mt-1 rounded mb-1 px-2 box-view" [ngClass]="status ? 'show' : 'hide'">
+        <div class="row">
+          <div class="col-lg col-md col-sm col-12 mb-1">
+            <p class="col-12 p-0 m-0 mb-1" style="font-size: 14px; font-weight: 600;">Verification Checkpoint</p>
+            <div class="input-group">
+              <input type="Text" class="form-control inthight" [(ngModel)]="verifyename" placeholder="Enter Verification Checkpoint"
+
+              style="font-size: 12px;">
+            </div>
+          </div>
+          <div class="col-lg col-md col-sm col-12 mb-1">
+            <p class="col-12  p-0 m-0 mb-1" style="font-size: 14px; font-weight: 600;">Verification Status</p>
+            <div class="input-group">
+              <select class="custom-select inthight"[(ngModel)]="verifystatus" id="inputGroupSelect01 placeholder" placeholder="Status">
+                <option value="Enable">Enable</option>
+                <option value="Disable">Disable</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <footer id="modal-footer " class="d-flex justify-content-end  mt-1">
+          <button id="modal-action-button" 
+          class="btn btn-md button_action" 
+          type="button" (click)="openModal()" style="font-size: 12px;">
+            Submit
+          </button>
+          <button class="btn btn-sm button_cancel" 
+          type="button" id="modal-cancel-button" 
+          (click)="showhidebox()" style="font-size: 12px;">
+            Cancel
+          </button>
+        </footer>
+      </div>
+      <!-- Add Fade in -->
+      <!-- View Fade in -->
+      <div class="p-1 bg-white mt-1 rounded mb-1 px-2 box-view" [ngClass]="statusedit ? 'show' : 'hide'">
+        <div class="row">
+          <div class="col-lg col-md col-sm col-12">
+            <p class="col-12 p-0 m-0 mb-1" style="font-size: 14px; font-weight: 600;">Edit Verification Checkpoint</p>
+            <div class="input-group">
+              <input type="Text" class="form-control inthight" [(ngModel)]="editverifyename" placeholder="Enter Verification Name"
+              style="font-size: 12px;">
+            </div>
+          </div>
+    
+          <div class="col mb-1">
+            <p class="col p-0 m-0 mb-1" style="font-size: 14px; font-weight: 600;">Edit Verification Status</p>
+            <div class="input-group">
+              <select class="custom-select inthight" id="inputGroupSelect01 placeholder" [(ngModel)]="editverifystatus">
+                <option value="Enable">Enable</option>
+                <option value="Disable">Disable</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <footer id="modal-footer " class="d-flex justify-content-end  mt-1">
+          <button id="modal-action-button" class="btn btn-sm button_action" 
+          type="button" (click)="openModaledit()" style="font-size: 12px;">
+            Update
+          </button>
+          <button class="btn btn-sm button_cancel" 
+          type="button" id="modal-cancel-button" (click)="showhideboxedit()" style="font-size: 12px;">
+            Cancel
+          </button>
+        </footer>
+      </div>
+      <!-- View Fade in -->
+      <!-- Table Box View -->
+      <div class="bg-white  table-top">
+        <!-- Search View -->
+        <div class="main d-flex justyfy-content-end aligin-items-center">
+          <div id="custom-search-input mb-2" style="z-index: 9999;">
+            <div class="input-group mb-2">
+              <input type="text" class="  search-query form-control" placeholder="Search"
+                (keyup)="doFilter($event.target.value)" style="font-size: 12px;"/>
+              <span class="input-group-btn btn btn-primary mr-2 btn-search">
+                  <i class="fas fa-search " aria-hidden="true" ></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- Search View -->
+        <!-- Table View -->
+        <div class="col col-lg col-md col-sm m-0 p-0 justyfy-content-center align-items-center table-scroll">
+        <table mat-table [dataSource]="dataSource" matSort class=" table-view">
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-head">Sl.No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.sl_num}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-head">Verification Checkpoint </th>
+            <td mat-cell *matCellDef="let element"> {{element.name | titlecase}} </td>
+          </ng-container>
+    
+    
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-head">Status</th>
+            <td mat-cell *matCellDef="let element"> {{element.status | titlecase}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef class="table-head text-center"> Action </th>
+    
+            <td mat-cell *matCellDef="let element" style="text-align: center;">
+              <span class="edit text-center m-auto">
+                <i class="far fa-edit  btn btn-primary text-center btn-sm p-1 mx-1" (click)="editModal(element)"
+                  aria-hidden="true" style="font-size: 12px;" data-toggle="tooltip" title="Edit"></i>
+                  <i class="fas fa-trash  btn btn-danger text-centerbtn-sm p-1 mx-1" (click)="deleteModal()"
+                  (click)="removeVerify(element.name)" aria-hidden="true" style="font-size: 12px;" data-toggle="tooltip" title="Delete"></i>
+                </span>
+            </td>
+          </ng-container>
+    
+    
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        </div>
+        <!-- Table View -->
+        <!-- pagination -->
+        <mat-paginator [pageSizeOptions]="[10, 15, 20, 50]" showFirstLastButtons></mat-paginator>
+        <!-- pagination -->
+      </div>
+      <!-- Table Box View -->
+    </div>
+  </div>
+  
+  <!-- Specilazation View -->
+
+  <div class="popup {{deleteit ?'pshow':''}}">
+    <div class="centerbox">
+      <div class="pclose" ><i class="fa fa-times " (click)="closealert()" style="font-size: 20px;"></i></div>
+      <section class="mx-2 mb-2 mt-2">
+        <div class="col d-flex justify-content-center align-items-center p-0 m-0">
+          <h5 class="p-0 m-0 mb-2">Confirm</h5>
+        </div>
+        <div class="col text-left px-3 mb-1 p-0 m-0">
+          <p class="p-0 m-0 mb-2" ><strong></strong> <span style="padding-left: 5px;"> Are you sure to delete Verification {{verification_delete}} ?</span></p>
+          
+        </div>
+      </section>
+      <footer id="modal-footer" style="padding-top: 100px;" class="col-12 mb-2 d-flex justify-content-center align-items-center">
+       
+        <div class="col m-0 p-0 px-3" >
+  
+          <button type="button" class="btn btn-sm "  (click)="deleteVerification()" id="modal-action-button">
+            Yes
+          </button>
+          <button type="button" class="btn btn-sm "  (click)="closealert()" id="modal-cancel-button">
+            No
+          </button>
+        </div>
+  
+        
+      </footer>
+    </div>
+  </div>

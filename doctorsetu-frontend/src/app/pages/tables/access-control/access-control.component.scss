@@ -1,0 +1,183 @@
+.search_fileld{
+    width: 25%;
+    display: block;
+    transition: all 0.5s ease;
+    width: 100%;
+    margin: 0;
+    color: #a9a9a9;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+.table-view{
+    border-top: 2px solid #fdf5f5;
+    border-bottom: 2px solid #fdf5f5;
+    width: 100%;
+}
+.table-head{
+    background-color: #ababab14;
+}
+.table-view th{
+    font-size: 13px !important;
+    color: #1f1919;
+    border-left: 1px solid #eee;
+    padding: 6px 5px !important;
+    vertical-align: middle;
+}
+.table-view td{
+    font-size: 12px !important;
+    color: #1f1919;
+    border-left: 1px solid #eee;
+    padding: 5px 10px;
+    vertical-align: middle;
+}
+tr.mat-row, tr.mat-footer-row, tr.mat-header-row {
+    height: unset;
+    border: 1px solid #eee;
+}
+.btn-search{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-size: 12px;
+}
+.symptom-head{
+    color: #000;
+    font-size: 22px;
+    font-weight: 600;
+}
+.head{
+    margin-bottom: 15px;
+}
+.button{
+    background-color: rgb(76, 76, 153) !important;
+    text-shadow: 0.5px 0.5px #4b2323;
+    transition: all 0.5s ease;
+    font-size: 12px;
+}
+.button:hover{
+    transform: scale(1.1);
+}
+.table-top{
+    border-top: 3px solid rgb(76, 76, 153);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 0 20px;
+}
+.main {
+    float: right;
+    margin-top: 12px;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+.show{
+    display: block;
+}
+.hide{
+display: none;
+}
+.edit{
+    cursor: pointer;
+}
+
+#custom-search-input {
+    margin:0;
+    margin-top: 0px;
+    padding: 0;
+}
+
+#custom-search-input .search-query {
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+    margin-bottom: 10;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#custom-search-input button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -28px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    // color:#D9230F;
+}
+
+.search-query:focus + button {
+    z-index: 3;   
+}
+.box-view{
+    border-top: 3px solid #684892;
+  }
+
+  #modal-footer {
+    justify-self: right;
+    align-self: center;
+    float: right;
+}
+
+.button_action {
+    margin-right: 30px;
+    background-color:#36be3d;
+    color: white;
+    padding: 6px;
+}
+
+.button_cancel {
+    background-color: #635f5f;
+    color: white;
+    padding: 6px;
+}
+.inthight{
+    font-size: 12px !important;
+    padding: 0px !important;
+    padding-left: 10px !important;
+    padding-right: 5px !important;
+    border: none;
+    border-radius: 0 !important;
+    box-shadow: none;
+  }
+
+@media only screen and (max-width: 600px) {
+    .table-scroll {
+      overflow-x: scroll;
+    }
+    .symptom-head{
+        font-size: 14px;
+    }
+    .table-head{
+        font-size: 14px !important;
+        font-weight: 300;
+        text-align: left;
+        padding: 0px 5px;
+    }
+    .button{
+        font-size: 12px;
+    }
+  }

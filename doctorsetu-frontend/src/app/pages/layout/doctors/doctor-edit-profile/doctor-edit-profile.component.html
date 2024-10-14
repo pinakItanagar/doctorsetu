@@ -1,0 +1,235 @@
+<div class="wrapper  m-1 position-relative">
+  <div class="row p-0 m-0 px-2 mb-1">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-12 border rounded d-flex justify-content-start">
+      <input type="file" (change)="onSelectFile($event)"accept="image/x-png,image/jpeg" class="custom-file-input p-1" id="inputGroupFile01"
+      aria-describedby="inputGroupFileAddon01">
+      <label class="custom-file-label" for="inputGroupFile01">Edit Image</label>
+    </div>
+  </div> 
+  <div class="row p-0 m-0 px-2 mb-1">
+    
+    <!-- Profile Pic Part -->
+    <div class="col-lg-3 col-md-3 col-sm-3 col-12  border rounded d-flex justify-content-center align-items-center">
+      <img src="{{profileimg}}" alt="img" style="width: 240px; height: 240px; background-size: contain;">
+    </div>
+    <!-- Profile Pic Part -->
+    <div class="col-lg-9 col-md-9 col-sm-12 col-12">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+          <p class="col-12 m-0 p-0" style="font-size: 14px; font-weight: 600;">Name <span class="red-star">*</span></p>
+          <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+            <input type="text" [(ngModel)]="doctor_name" 
+            class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+          <p class="col-12 m-0 p-0" style="font-size: 14px; font-weight: 600;">Mobile No <span class="red-star">*</span></p>
+          <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+            <div class="form-group" style="width: 600px;">
+
+            <input type="text" class="form-control" [(ngModel)]="phone" pattern="[0-9]{10}" ngModel #phones="ngModel" (keypress)="keyPress($event)" maxlength=10
+            class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+            <div *ngIf="phones.errors &&(phones.touched || phones.dirty)" class="aler alert-danger">
+              <div [hidden]="!phones.errors?.pattern">
+                Invalid Mobile Number 
+              </div> 
+            </div>
+
+         </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p class="col-12 m-0 p-0" style="font-size: 14px; font-weight: 600;">Email Id <span class="red-star">*</span></p>
+          <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+            <div class="form-group" style="width: 900px;">
+
+            <input type="text" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" ngModel #emails="ngModel" [(ngModel)]="email" class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+            <div *ngIf="emails.errors &&(emails.touched || emails.dirty)" class="aler alert-danger">
+              <div [hidden]="!emails.errors?.pattern">
+                Invalid Email ID 
+              </div>
+            </div>
+</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+          <p class="col-12 m-0 p-0" style="font-size: 14px; font-weight: 600;">Date of Birth</p>
+          <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+            <input type="date" [(ngModel)]="doc_dob" value="{{doc_dob}}" 
+            class="status-basic" nbInput fullWidth style="font-size: 12px; height: 30px;">
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12" style="padding-bottom: 5px;">
+          <p class="col-12 m-0 p-0" style="font-size: 14px; font-weight: 600;">Gender</p>
+          <div class="col d-flex justify-content-between 
+          align-items-center mb-1 p-0" style="font-size: 12px; height: 40px;">
+            <nb-select [(selected)]="gender" placeholder="gender" 
+            style="width: 100%;max-width: unset !important; ">
+              <nb-option value="female">Female</nb-option>
+              <nb-option value="male">Male</nb-option>
+              <nb-option value="other">Other's</nb-option>
+  
+            </nb-select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+          <p class="col-12 m-0 p-0" style="font-size: 14px; font-weight: 600;">Password</p>
+          <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+            <input type="password" [(ngModel)]="pwd"  placeholder="Enter Password"
+            class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+          <p class="col-12 m-0 p-0" style="font-size: 14px; font-weight: 600;">SMC No </p>
+          <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+            <input type="text" [(ngModel)]="smc" 
+            class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Top Headder -->
+  
+  
+  <div class="row m-0 p-0  mt-2">
+    <div class="col-lg col-md col-sm col-12">
+      <p class="col-12 m-0 p-0" style="font-size: 14px; font-weight: 600;">IMR No</p>
+      <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+        <input type="text" [(ngModel)]="imr" 
+        class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <p class="col-12 m-0 p-0"  style="font-size: 14px; font-weight: 600;">Aadhaar No <span class="red-star">*</span></p>
+      <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+        <input type="text" [(ngModel)]="aadhaar" 
+        class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <p class="col-12 m-0 p-0"  style="font-size: 14px; font-weight: 600;">Qualification <span class="red-star">*</span></p>
+      <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+        <input type="text" [(ngModel)]="qualification" 
+        class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+      </div>
+    </div>
+    
+  </div>
+  <div class="row m-0 p-0">
+    <div class="col-lg-4">
+      <p class="col-12  m-0 p-0"  style="font-size: 14px; font-weight: 600;">Languages Spoken <span class="red-star">*</span></p>
+      <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+        <nb-select [(selected)]="languages" 
+        multiple placeholder="Multiple Select" style="width:100%; font-size: 12px;">
+          <nb-option *ngFor="let language of languageslist" [value]="language.name">
+            {{language.name | titlecase}}
+          </nb-option>
+        </nb-select>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <p class="col-12 m-0 p-0"  style="font-size: 14px; font-weight: 600;">Specialization <span class="red-star">*</span></p>
+      <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+        <nb-select [(selected)]="specialisation" 
+        multiple placeholder="Multiple Select" style="width:100%; font-size: 12px; height: 20% !important;">
+          <nb-option *ngFor="let specialization of specializationList" [value]="specialization.name">
+            {{specialization.name | titlecase}}
+          </nb-option>
+        </nb-select>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <p class="col-12 m-0 p-0"  style="font-size: 14px; font-weight: 600;">Symptoms Treated <span class="red-star">*</span></p>
+      <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+        <nb-select [(selected)]="symptoms" 
+        multiple placeholder="Multiple Select" style="width:100%; font-size: 12px; height: 20%;">
+          <nb-option *ngFor="let symptom of symptomslist" [value]="symptom.sym_name">
+            {{symptom.sym_name | titlecase}}
+          </nb-option>
+        </nb-select>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="col p-0 px-2 m-0">
+    <p class="col-12 p-0 m-0"  style="font-size: 14px; font-weight: 600;">Address <span class="red-star">*</span></p>
+    <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+      <!-- <input type="text-area"  class="form-control m-0" id="exampleInputEmail1"> -->
+      <textarea [(ngModel)]="address" 
+      class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;"></textarea>
+    </div>
+  </div>
+  <div class="row p-0 px-1  m-0">
+    <div class="col-lg col-md col-sm col-12 p-0 mx-1">
+      <p class="col-12 p-0 m-0"  style="font-size: 14px; font-weight: 600;">City</p>
+      <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+        <input type="text" [(ngModel)]="city" 
+        class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+      </div>
+    </div>
+    <div class="col-lg col-md col-sm col-12 p-0 mx-1">
+      <p class="col-12 p-0 m-0"  style="font-size: 14px; font-weight: 600;">State</p>
+      <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+        <input type="text" [(ngModel)]="state" 
+        class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;">
+      </div>
+    </div>
+    <div class="col-lg col-md col-sm col-12 p-0 mx-1">
+      <p class="col-12 p-0 m-0"  style="font-size: 14px; font-weight: 600;">Pin code  <span class="red-star">*</span></p>
+      <div class="col d-flex justify-content-between align-items-center mb-1 p-0">
+        <div class="form-group" style="width: 400px;">
+
+        <input type="text" [(ngModel)]="pin" class="form-control" pattern="[0-9]{6}" ngModel #pins="ngModel" (keypress)="keyPress($event)"
+        class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;" maxlength=6>
+        <div *ngIf="pins.errors &&(pins.touched || pins.dirty)" class="aler alert-danger"> 
+                  <div [hidden]="!pins.errors?.pattern"> 
+                    Invalid Pin Code
+                  </div>
+                  </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <div class="row px-2 m-0 p-0">
+    <p class="col-12  m-0 p-0"  style="font-size: 14px; font-weight: 600;">Short Brief</p>
+    <div class="col m-0 p-0">
+      <div class="col p-0">
+        <textarea [(ngModel)]="about" 
+        class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="row px-2 m-0 p-0">
+    <p class="col-12 m-0 p-0"  style="font-size: 14px; font-weight: 600;">Achievements</p>
+    <div class="col p-0">
+      <div class="col p-0 ">
+        <textarea [(ngModel)]="doc_achievements" 
+        class="form-control m-0" id="exampleInputEmail1" style="font-size: 12px;"></textarea>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="row justify-content-end">
+  
+    <div class="row">
+      <div class="col mt-3 mb-3 mr-4">
+        <button type="submit" class="btn btn-primary btn-sm  float-right"
+         (click)="updatefields()" style="font-size: 12px;">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

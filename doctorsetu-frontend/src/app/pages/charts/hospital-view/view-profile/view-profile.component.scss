@@ -1,0 +1,207 @@
+:host ::ng-deep nb-stepper .step-content {
+    text-align: center;
+  
+    button {
+      cursor: pointer;
+      margin: 0.5rem;
+    }
+  }
+  .search_fileld {
+    width: 25%;
+    display: block;
+    transition: all 0.5s ease;
+    width: 100%;
+    margin: 0;
+    color: #a9a9a9;
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .table-view {
+    border-top: 2px solid #fdf5f5;
+    border-bottom: 2px solid #fdf5f5;
+  }
+  .table-view th {
+    font-size: 14px !important;
+    color: rgb(64, 64, 122) !important;
+    text-align: center;
+    padding: 1px 5px;
+    border-left: 1px solid #eee;
+  }
+  .table-view th:hover {
+    color: rgb(64, 64, 122);
+  }
+  .table-view td {
+    font-size: 14px;
+    text-align: center;
+    padding: 2px 6px;
+    border-left: 1px solid #eee;
+  }
+  .symptom-head {
+    color: #000;
+    font-size: 28px;
+    font-weight: 600;
+  }
+  .head {
+    margin-bottom: 30px;
+  }
+  .button {
+    background-color: rgb(76, 76, 153) !important;
+    text-shadow: 0.5px 0.5px #4b2323;
+    transition: all 0.5s ease;
+  }
+  .button:hover {
+    transform: scale(1.1);
+  }
+  .table-top {
+    border-top: 2px solid rgb(76, 76, 153);
+  }
+  .main {
+    width: 20%;
+    float: right;
+    margin-top: 12px;
+  }
+  
+  /* Bootstrap 4 text input with search icon */
+  
+  .has-search .form-control {
+    padding-left: 2.375rem;
+  }
+  
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+  }
+  
+  .box-view {
+    border-top: 3px solid #684892;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .tab-title {
+    color: #444 !important;
+  }
+  
+  #modal-footer {
+    justify-self: right;
+    align-self: center;
+    float: right;
+  }
+  
+  .button_action {
+    margin-right: 30px;
+    background-color: #36be3d;
+    color: white;
+    padding: 6px;
+  }
+  
+  .button_cancel {
+    background-color: #635f5f;
+    color: white;
+    padding: 6px;
+  }
+  .text-left {
+    color: #303530;
+  }
+  .text-right {
+    color: #7f837f;
+  }
+  .btn-col {
+    background-color: #888 !important;
+    color: #fff;
+  }
+  .small-screen{
+    padding-left: 30px !important;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .week-option {
+      font-size: 8px;
+    }
+    .small-screen{
+      padding-left: 0px !important;
+    }
+    .small-screen-mobi{
+      border-bottom: 1px solid #d3d0d0;
+      border-radius: 5px;
+    }
+    .small-screen h6 , p{
+      font-size: 12px;
+      display: block;
+    }
+    .mdi-View p{
+      display: table !important;
+      width: 100%;
+    }
+    .font-view{
+      text-align: right;
+    }
+    .days {
+      width: 23px !important;
+      height: 23px !important;
+      line-height: 20px !important;
+      font-size: 10px !important;
+      text-align: center !important;
+    }
+    
+  }
+  .days {
+    width: 40px;
+    height: 25px;
+    background-color: #efefef;
+    color: #888;
+    border-radius: 4px;
+    margin: 5px 2px;
+    line-height: 25px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+    text-transform: capitalize;
+    cursor: pointer;
+  }
+  .consultblock {
+    display: inline-flex;
+  }
+  .consultinput {
+    width: 100px;
+    height: 25px;
+    background-color: #efefef;
+    color: #888;
+    border-radius: 4px;
+    margin: 5px 2px;
+    line-height: 25px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+  }
+  .consulttype {
+    width: 40px;
+    height: 25px;
+    background-color: #efefef;
+    color: #888;
+    border-radius: 4px;
+    margin: 5px 2px;
+    line-height: 25px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  .selected {
+    background-color: #28a745;
+    color: #fff;
+  }
+  .agm-map {
+    height: 300px !important;
+    width: 100%;  /* This is really important*/
+  }

@@ -1,0 +1,207 @@
+:host ::ng-deep nb-stepper .step-content {
+  text-align: center;
+
+  button {
+    cursor: pointer;
+    margin: 0.5rem;
+  }
+}
+.search_fileld{
+  width: 25%;
+  display: block;
+  transition: all 0.5s ease;
+  width: 100%;
+  margin: 0;
+  color: #a9a9a9;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.table-head{
+  background-color: #ababab14;
+}
+.table-view th{
+  font-size: 13px !important;
+  color: #1f1919;
+  border-left: 1px solid #eee;
+  padding: 6px 5px !important;
+  vertical-align: middle;
+}
+.table-view td{
+  font-size: 12px !important;
+  color: #1f1919;
+  border-left: 1px solid #eee;
+  padding: 5px 10px;
+  vertical-align: middle;
+}
+tr.mat-row, tr.mat-footer-row, tr.mat-header-row {
+  height: unset;
+  border: 1px solid #eee;
+}
+.btn-search{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 12px;
+}
+.symptom-head{
+  color: #000;
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+.head{
+  margin-bottom: 15px;
+}
+.button{
+  background-color: rgb(76, 76, 153) !important;
+  text-shadow: 0.5px 0.5px #4b2323;
+  transition: all 0.5s ease;
+  color: #FFF;
+  font-size: 12px;
+}
+.button:hover{
+  transform: scale(1.1);
+}
+.table-top{
+  border-top: 3px solid rgb(76, 76, 153);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 0 20px;
+}
+.main {
+  float: right;
+  margin-top: 6px;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+.inthight{
+  font-size: 12px !important;
+  padding: 0px !important;
+  padding-left: 10px !important;
+  padding-right: 5px !important;
+  border: none;
+  border-bottom: 1px solid #8b8585de;
+  border-radius: 0 !important;
+  align-items: flex-end !important;
+}
+.box-view{
+  border-top: 3px solid #684892;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.tab-title{
+  color: #444 !important;
+}
+
+#modal-footer {
+  justify-self: right;
+  align-self: center;
+  float: right;
+}
+
+.button_action {
+  margin-right: 30px;
+  background-color:#36be3d;
+  color: white;
+  padding: 6px;
+}
+
+.button_cancel {
+  background-color: #635f5f;
+  color: white;
+  padding: 6px;
+}
+.edit{
+  cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+  
+  .table-scroll {
+    overflow-x: scroll;
+  }
+  .symptom-head{
+      font-size: 16px;
+  }
+  .table-head{
+      font-size: 12px !important;
+      font-weight: 300;
+      text-align: left;
+      padding: 0px 5px;
+  }
+  .button{
+      font-size: 12px;
+  }
+}
+.popup{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #00000063;
+  display: none;
+  z-index: 9999;
+}
+.centerbox{
+  background: #fff;
+  width: 450px;
+  // min-height: 250px;
+  margin: auto;
+  border-radius: 5px;
+}
+.pshow{
+  display:flex;
+}
+.pclose{
+  float: right;
+  margin-top: -12px;
+  margin-right: -12px;
+  background: #000;
+  color: #fff;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 26px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+#modal-footer {
+  text-align: center;
+  align-self: center;
+  margin-top: 10px;
+}
+
+#modal-action-button {
+  margin-right: 20px;
+  background-color:#75c448;
+  color: white;
+}
+
+#modal-cancel-button {
+  background-color: #7c7a7a;
+  color: white;
+}
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}

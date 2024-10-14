@@ -1,0 +1,153 @@
+<div class="wrapper  m-1 position-relative">
+    <div class="d-flex flex-direction-row justify-content-between w-100 align-items-center head">
+      <div class="symptom-head">
+        <span>Consultation</span>
+      </div>
+      <button type="button" class="btn btn-secondary button btn-sm mt-3 mr-1" 
+        mat-raised-button (click)="addconsultblock()">
+        + Add
+      </button>
+    </div>
+    <div class="row m-0 p-0">
+      <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+        <div class="p-0 m-0 mb-1 " >
+          <nb-toggle [(ngModel)]="isClinic" (click)="isClinictoggal()" style="font-size: 12px;">Clinic</nb-toggle>
+        </div>
+      </div>
+    </div>
+    <div class="row m-0 p-0" *ngIf="isClinic">
+      <div class="col-12 col-lg col-md col-sm m-0 p-0 mx-1">
+        <p class="m-0 p-0 text-left" style="font-size: 14px; font-weight: 600;">Clinic Name</p>
+        <div class="p-0 m-0 mb-1">
+          <p class="p-0 m-0">
+            <input type="text" class="form-control m-0" 
+            [(ngModel)]="clinicname" id="exampleInputEmail1"
+              aria-describedby="emailHelp" placeholder="Clinic Name" style="font-size: 12px;">
+          </p>
+        </div>
+      </div>
+      <div class="col-12 col-lg col-md col-sm m-0 p-0 mx-1">
+        <p class="m-0 p-0 text-left" style="font-size: 14px; font-weight: 600;">Clinic Address</p>
+        <div class="p-0 m-0 mb-1">
+          <p class="p-0 m-0">
+            <input type="text-area" 
+            [(ngModel)]="address" class="form-control m-0" id="exampleInputEmail1"
+              aria-describedby="emailHelp" placeholder="Address" style="font-size: 12px;">
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row m-0 p-0" *ngIf="isClinic">
+      <div class="col-12 col-lg col-md col-sm m-0 p-0 mx-1">
+        <p class="m-0 p-0 text-left" style="font-size: 14px; font-weight: 600;">City</p>
+        <div class="p-0 m-0 mb-1">
+          <p class="p-0 m-0">
+            <input type="text" [(ngModel)]="city" class="form-control m-0" id="exampleInputEmail1"
+              aria-describedby="emailHelp" placeholder="City" style="font-size: 12px;">
+          </p>
+        </div>
+      </div>
+      <div class="col-12 col-lg col-md col-sm m-0 p-0 mx-1">
+        <p class="m-0 p-0 text-left" style="font-size: 14px; font-weight: 600;">State</p>
+        <div class="p-0 m-0 mb-1">
+          <p class="p-0 m-0">
+            <input type="text" [(ngModel)]="state" class="form-control m-0" id="exampleInputEmail1"
+              aria-describedby="emailHelp" placeholder="state" style="font-size: 12px;">
+          </p>
+        </div>
+      </div>
+      <div class="col-12 col-lg col-md col-sm m-0 p-0 mx-1">
+        <p class="m-0 p-0  text-left" style="font-size: 14px; font-weight: 600;">PIN</p>
+        <div class="p-0 m-0 mb-1">
+          <p class="p-0 m-0">
+            <input type="text" [(ngModel)]="pin" class="form-control" id="inputZip" name="pin" pattern="[0-9]{4}"
+              maxlength="6" placeholder="Pin Code" style="font-size: 12px;">
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row m-0 p-0 mb-1" *ngIf="isClinic">
+      <div class="col-12 col-lg col-md col-sm mb-2 m-0 p-0 mx-1">
+        <div class="p-0 m-0 mb-1">
+          <p class="m-0 p-0 text-left" style="font-size: 14px; font-weight: 600;">Map Location</p>
+          <p class="p-0 m-0 px-1"><a (click)="mapview()" style="color: blue; font-size: 12px; ">View map </a></p>
+          <div class="row">
+            <div class="col mt-2 mb-3 mr-3" *ngIf="map">
+              <p class="p-0 m-0 px-1 py-2"><a (click)="mapview()" style="color:red;">Close map </a></p>
+              <agm-map [latitude]="lat" [longitude]="lng" style="height: 300px;">
+                <agm-marker [latitude]="lat" [longitude]="lng" [markerDraggable]="true" (dragEnd)="markerDragEnd($event)">
+                </agm-marker>
+              </agm-map>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <nb-card class="container m-0 p-0">
+      <div class="row p-0 m-0 p-2">
+        <div class="col d-flex justify-content-around align-items-center mt-1 p-0 m-0">
+          <p class="m-0 p-0" style="font-size: 14px; font-weight: 600;">Standard Slot Duration :</p>
+          <p class="p-0 m-0 d-flex align-items-center">
+              <input type="number" class="form-control m-0 p-0 text-center mx-1" 
+              [(ngModel)]="interval" id="exampleInputEmail1"
+                aria-describedby="emailHelp" value="30" style="width: 3rem; height: 1.5rem; font-size: 12px;">
+              <span> mins</span> 
+          </p>
+        </div>
+        <!-- <div class="col d-flex justify-content-center align-items-center mt-1">
+    
+           <span style="font-size: 14px; font-weight: 600;">Consultation Fee :<span> &#8377;</span></span>
+        <span style="font-size: 12px;">
+          
+          <input type="text" class="form-control m-0 p-0 text-center mx-1" id="exampleInputEmail1" 
+          aria-describedby="emailHelp"[(ngModel)]="doc_consultation_fee"
+            value="00" style="width: 3rem; height: 1.5rem; font-size: 12px;"></span>
+         Inclusive of all taxes. 
+        </div> -->
+        <div class="col d-flex justify-content-center align-items-center mt-1">
+  </div>
+  <div class="col d-flex justify-content-center align-items-center mt-1">
+  </div>
+      </div>
+      <p class="col-12 mx-1 m-0 p-1" style="font-size: 14px; font-weight: 600;">Consultation Timings:</p>
+      <div *ngFor="let item of consultationlist | keyvalue">
+    
+        <nb-card class="container m-0 p-0">
+    
+          <div class="row" style="font-size: 12px;">
+            <div class="col-lg-4 col-md-4 col-sm-12 consultblock">
+              <div *ngFor="let day of days  ">
+                <div class="days {{ item.value.days.includes(day.fname)?'selected':''}} "(click)="toggleconsult(day.fname,item.key,'days')">{{day.name}}</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 consultblock">
+              <input type="time" class="form-control  consultinput" [(ngModel)]="item.value.startTime"
+                id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="10:00">
+              <input type="time" class="form-control consultinput" [(ngModel)]="item.value.endTime" id="exampleInputEmail1"
+                aria-describedby="emailHelp" placeholder="22:00">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 consultblock">
+              <div *ngFor="let atype of avaliableMode  ">
+                <div class="consulttype  {{ item.value.avaliableMode.includes(atype.name)?'selected':''}} "
+                  (click)="toggleconsult(atype.name,item.key,'avaliableMode')"><i class=" {{atype.icon}}"></i></div>
+              </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-12 consultblock">
+              <div class="consulttype material-icons delete" (click)="removeConfigBlock(item.key)">delete</div>
+            </div>
+          </div>
+    
+    
+        </nb-card>
+      </div>
+    </nb-card>
+    <div class="row">
+      <div class="col mt-2 mb-3 mr-3">
+        <button type="submit" class="btn btn-primary btn-sm  float-right" (click)="upload()">Submit</button>
+      </div>
+    </div>
+  </div>
+  
+  
+  

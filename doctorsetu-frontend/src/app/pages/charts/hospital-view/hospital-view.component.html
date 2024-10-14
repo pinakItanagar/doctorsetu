@@ -1,0 +1,48 @@
+<div class="wrapper  m-1 position-relative">
+    <div size="" accent="info" class="bg-none mx-1">
+    
+      <div class="d-flex flex-direction-row justify-content-between w-100 align-items-center head">
+        <div class="symptom-head">
+          <span>Hospital Profile</span>
+        </div>
+        <!-- <button type="button" class="btn btn-primary button" mat-raised-button>
+          + Edit
+        </button> -->
+        
+      </div>
+      <div class=" bg-white  table-top box-view m-0 p-0">
+          <nb-card>
+              <nb-card-body class="p-0 m-0">
+            
+                <nb-tabset fullWidth>
+                  <nb-tab tabTitle="View" tabIcon="person-outline" responsive *ngIf="addbranch == undefined && id != undefined && block"
+                  style="font-size: 14px !important; font-weight: 600; padding: 1px !important; color: #333 !important; ">
+                    <ngx-view-profile></ngx-view-profile>
+                  </nb-tab>
+                  <nb-tab tabTitle="{{edit}}" tabIcon="edit-2-outline" responsive [disabled]="(accestype ==  'branchadmin'  &&  doctor_details.branch_id != branch_id)"
+                  style="font-size: 14px !important; font-weight: 600; padding: 1px !important; color: #333 !important; ">
+                    <ngx-edit-profile></ngx-edit-profile>
+                  </nb-tab>
+                  <nb-tab tabTitle="Enroll Doctor" [disabled]="(id == undefined || addbranch != undefined) || (accestype ==  'branchadmin'  &&  doctor_details.branch_id != branch_id) ||  !block"   tabIcon="file-add-outline" responsive 
+                  style="font-size: 14px !important; font-weight: 600; padding: 1px !important; color: #333 !important; ">
+                    <ngx-enroll-doctor></ngx-enroll-doctor>
+                  </nb-tab>
+                  <!-- <nb-tab tabTitle="Consultation Time" tabIcon="clock-outline" responsive 
+                  style="font-size: 14px !important; font-weight: 600; padding: 1px !important; color: #333 !important; ">
+                    <ngx-consultation-times></ngx-consultation-times>
+                  </nb-tab> -->
+                  <nb-tab tabTitle="Payment Settings" [disabled]="(id == undefined || addbranch != undefined) || (accestype ==  'branchadmin'  &&  doctor_details.branch_id != branch_id) || !block" tabIcon="credit-card-outline" responsive 
+                  style="font-size: 14px !important; font-weight: 600; padding: 1px !important; color: #333 !important; ">
+                    <ngx-payment-setting></ngx-payment-setting>
+                  </nb-tab>
+                </nb-tabset>
+            
+              </nb-card-body>
+            </nb-card>
+        
+      </div>
+  
+  </div>
+  </div>
+  
+  
